@@ -15,7 +15,7 @@
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:inputType="textEmailAddress" />
+        android:inputType="text" />
 
     <TextView
         android:id="@+id/textView2"
