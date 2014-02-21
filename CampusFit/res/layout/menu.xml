@@ -26,7 +26,7 @@
         android:id="@+id/templates"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Button02"
+        android:layout_below="@+id/profile"
         android:layout_centerHorizontal="true"
         android:text="Templates" />
 
@@ -34,7 +34,7 @@
         android:id="@+id/workouts"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Button03"
+        android:layout_below="@+id/templates"
         android:layout_centerHorizontal="true"
         android:text="Workouts" />
 
@@ -42,16 +42,16 @@
         android:id="@+id/matchmaker"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Button04"
-        android:layout_below="@+id/Button04"
+        android:layout_below="@+id/workouts"
+        android:layout_centerHorizontal="true"
         android:text="Match Maker" />
 
     <Button
         android:id="@+id/sampleworkouts"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/matchmaker"
+        android:layout_centerHorizontal="true"
         android:text="Sample Workouts" />
 
 </RelativeLayout>
