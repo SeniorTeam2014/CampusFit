@@ -38,7 +38,7 @@
             android:name="com.example.campusfit.Workouts" >
  		</activity>
  		<activity
-            android:name="com.example.campusfit.MatchMaker" >
+            android:name="com.example.campusfit.MatchmakerList" >
  		</activity>
  		<activity
             android:name="com.example.campusfit.SampleWorkouts" >

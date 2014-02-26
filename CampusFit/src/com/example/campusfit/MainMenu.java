@@ -72,7 +72,7 @@ public class MainMenu extends Activity implements OnClickListener {
 		case R.id.matchmaker:
 			// matchmaker button pressed
 			try {
-				Intent i4 = new Intent(this, MatchMaker.class);
+				Intent i4 = new Intent(this, MatchmakerList.class);
 				startActivity(i4);
 			} catch (ActivityNotFoundException e) {
 				e.printStackTrace();
