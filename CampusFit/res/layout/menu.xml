@@ -3,22 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:gravity="center"
-        android:text="Main Menu"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
     <Button
         android:id="@+id/profile"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:text="Profile" />
 
@@ -50,8 +38,8 @@
         android:id="@+id/sampleworkouts"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/matchmaker"
         android:layout_below="@+id/matchmaker"
-        android:layout_centerHorizontal="true"
         android:text="Sample Workouts" />
 
 </RelativeLayout>

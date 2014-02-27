@@ -1,5 +1,6 @@
 package com.example.campusfit;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -9,7 +10,14 @@ import android.view.View.OnClickListener;
 
 public class MainMenu extends Activity implements OnClickListener {
 
-	public void onCreate(Bundle savedInstanceState) {	
+	public void setActionBar(String heading) {
+		ActionBar actionBar = getActionBar();
+		actionBar.setTitle(heading);
+		actionBar.show();
+	}
+	
+	public void onCreate(Bundle savedInstanceState) {
+		setActionBar("Main Menu");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.menu);
 		
