@@ -1,12 +1,15 @@
 package com.example.campusfit;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.EditText;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -49,12 +52,33 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		case R.id.enter:
 			// enter button is pressed, goto main menu
-			try {
-				Intent i2 = new Intent(this, MainMenu.class);
-				startActivity(i2);
-			} catch (ActivityNotFoundException e) {
-				e.printStackTrace();
-			}
+			EditText usernameinfo = (EditText)findViewById(R.id.editText1);
+			EditText passwordinfo = (EditText)findViewById(R.id.editText2);
+			
+			String password = passwordinfo.getText().toString();
+			String username = usernameinfo.getText().toString();
+			
+			
+			JSONFunctions j = new JSONFunctions();
+			
+			if(password != null && username != null)
+				j.execute("http://54.245.123.104/test.php?uName=" + username);
+			
+			String checkuser = j.getUsername();
+			String checkpass = j.getPassword();
+			Log.v("username", checkuser);
+			Log.v("username", checkpass);
+			//if(checkuser.equals(username) && checkpass.equals(password))
+			//{
+				try {
+					Intent i2 = new Intent(this, MainMenu.class);
+					startActivity(i2);
+				} catch (ActivityNotFoundException e) {
+					e.printStackTrace();
+				}
+			//}
+			//else
+				//Log.v("wrong login", "You entered wrong username/password");
 			break;
 			
 		} 
