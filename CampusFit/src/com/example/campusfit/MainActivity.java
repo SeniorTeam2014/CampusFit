@@ -1,5 +1,9 @@
 package com.example.campusfit;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.app.ActionBar;
@@ -70,23 +74,31 @@ public class MainActivity extends Activity implements OnClickListener {
 			JSONFunctions j = new JSONFunctions();
 			
 			if(password != null && username != null)
-				j.execute("http://54.245.123.104/test.php?uName=" + username);
+			{
+				try {
+					j.execute("http://54.245.123.104/test.php?uName=" + username).get();
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (ExecutionException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+			}	}
 			
 			String checkuser = j.getUsername();
 			String checkpass = j.getPassword();
-			Log.v("username", checkuser);
-			Log.v("username", checkpass);
-			//if(checkuser.equals(username) && checkpass.equals(password))
-			//{
+			
+			if(checkuser.equals(username) && checkpass.equals(password))
+			{
 				try {
 					Intent i2 = new Intent(this, MainMenu.class);
 					startActivity(i2);
 				} catch (ActivityNotFoundException e) {
 					e.printStackTrace();
 				}
-			//}
-			//else
-				//Log.v("wrong login", "You entered wrong username/password");
+			}
+			else
+				Log.v("wrong login", "You entered wrong username/password combo");
 			break;
 			
 		} 

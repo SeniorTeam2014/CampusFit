@@ -41,10 +41,7 @@ public class JSONFunctions extends AsyncTask<String,Void,String> {
 	    } catch (Exception e) {
 	        Log.v("log_tag", "Error in http connection " + e.toString());
 	    }
-		return null;
-	}
-	
-	protected void onPostExecute(String result) {
+		
 		try{
 	        BufferedReader reader = new BufferedReader(new InputStreamReader(is,"UTF-8"));
 	        StringBuilder sb = new StringBuilder();
@@ -66,14 +63,18 @@ public class JSONFunctions extends AsyncTask<String,Void,String> {
 			jObject = new JSONObject(result);
 			username = (String)jObject.get("uName");
 			password = (String)jObject.get("uPass");
+			//Log.v("json user", getUsername());
 	}catch(JSONException e){
 	        Log.e("log_tag", "Error parsing data "+e.toString());
 	        username = null;
 	        password = null;
 		}
-		
-		
 	
+		return null;
+	}
+	
+	protected void onPostExecute(String result) {
+		//do nothing
 	}
 	
 	public String getUsername()
