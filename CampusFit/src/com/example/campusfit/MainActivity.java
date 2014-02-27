@@ -76,7 +76,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			if(password != null && username != null)
 			{
 				try {
-					j.execute("http://54.245.123.104/test.php?uName=" + username).get();
+					j.execute("http://54.245.123.104/login.php?uName=" + username).get();
 				} catch (InterruptedException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Beginner&apos;s Guide to Working Out" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="15sp"
+        android:text="Every workout should consist of 3 parts: \n\t 1. Warm-Up \n\t 2. Exercise of your own choice \n\t 3. Cooldown" />
+<LinearLayout 
+    android:id="@+id/LinearLayout02" 
+    android:layout_height="wrap_content" 
+    android:layout_width="fill_parent" 
+    android:layout_alignParentBottom="true">
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="20px"
+        android:text="Cooldown" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="120px"
+        android:text="Warm-Up" />
+	</LinearLayout>
+<LinearLayout 
+    android:id="@+id/LinearLayout02" 
+    android:layout_height="wrap_content" 
+    android:layout_width="fill_parent" 
+    android:layout_alignParentBottom="true">
+
+<EditText
+    android:id="@+id/editText3"
+    android:layout_marginTop="5px"
+    android:layout_width="250px"
+    android:layout_height="wrap_content"
+    android:text="light activities which prepare your body for the stress of the workout. These activities should increase blood flow, and heat up the muscles and joints"
+    android:ems="10"
+    android:textSize="14.5sp"
+    android:inputType="textMultiLine" />
+<EditText
+    android:id="@+id/editText3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5px"
+    android:text="activities are low-intensity which follow a stressful workout. They allow your heart rate to slow down and your body to return to its typical relaxed state"
+    android:ems="10"
+    android:textSize="14.5sp"
+    android:inputType="textMultiLine" />
+	</LinearLayout>
+
+<Button
+    android:id="@+id/button3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30px"
+    android:layout_marginLeft="130px"
+    android:text="Sample Workout" />
+
+</LinearLayout>
