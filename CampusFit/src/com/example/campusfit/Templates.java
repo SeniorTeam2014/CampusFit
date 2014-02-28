@@ -17,6 +17,7 @@ public class Templates extends ListActivity {
 		actionBar.show();
 	}
 
+	@Override
 	public void onCreate(Bundle i) {
 		setActionBar("Workout Templates");
 		super.onCreate(i);
@@ -36,7 +37,7 @@ public class Templates extends ListActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.templates_menu, menu);
 		return true;
 	}
 }

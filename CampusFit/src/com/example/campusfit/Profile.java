@@ -14,6 +14,7 @@ public class Profile extends Activity implements OnClickListener {
 		actionBar.show();
 	}
 	
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setActionBar("Profile");
 		super.onCreate(savedInstanceState);
