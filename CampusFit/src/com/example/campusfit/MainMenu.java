@@ -37,6 +37,9 @@ public class MainMenu extends Activity implements OnClickListener {
 		View matchmaker = findViewById(R.id.matchmaker);
 		matchmaker.setOnClickListener(this);
 		
+		View findtrainer = findViewById(R.id.findatrainer);
+		findtrainer.setOnClickListener(this);
+		
 		// setup 'sampleworkouts' button
 		View sampleworkouts = findViewById(R.id.sampleworkouts);
 		sampleworkouts.setOnClickListener(this);
@@ -87,11 +90,21 @@ public class MainMenu extends Activity implements OnClickListener {
 			}
 			break;
 			
+		case R.id.findatrainer:
+			// matchmaker button pressed
+			try {
+				Intent i5 = new Intent(this, FindTrainer.class);
+				startActivity(i5);
+			} catch (ActivityNotFoundException e) {
+				e.printStackTrace();
+			}
+			break;
+			
 		case R.id.sampleworkouts:
 			// sampleworkouts button pressed
 			try {
-				Intent i5 = new Intent(this, SampleWorkouts.class);
-				startActivity(i5);
+				Intent i6 = new Intent(this, SampleWorkouts.class);
+				startActivity(i6);
 			} catch (ActivityNotFoundException e) {
 				e.printStackTrace();
 			}
