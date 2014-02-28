@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textMultiLine"
+        android:textSize="20dp"
         android:text="BENEFITS: Stretching increases your body&apos;s flexibility, increase blood flow, reduces your risk to injury, reduces muscle soreness and stiffness, and helps your body to relax after a workout" />
 
     <LinearLayout
@@ -30,8 +31,8 @@
 
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="120px"
-            android:layout_height="120px"
+            android:layout_width="220px"
+            android:layout_height="220px"
             android:src="@drawable/calf_stretch2" />
 
         <EditText
@@ -39,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:text="\nCalf Stretch" />
+            android:text="\n\n\nCalf Stretch" />
     </LinearLayout>
 <LinearLayout
         android:id="@+id/LinearLayout02"
@@ -48,8 +49,8 @@
     
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="120px"
-        android:layout_height="120px"
+        android:layout_width="220px"
+        android:layout_height="220px"
         android:layout_marginTop="30px"
         android:src="@drawable/hamstring" />
 
@@ -58,8 +59,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_marginTop="30px"
-        android:text="\nHamstring Stretch"
+        android:layout_marginTop="30dp"
+        android:text="\n\n\nHamstring Stretch"
         android:ems="10" />
 
 	</LinearLayout>
@@ -68,8 +69,8 @@
     android:id="@+id/more"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="180px"
-    android:layout_marginTop="30px"
+    android:layout_marginLeft="250dp"
+    android:layout_marginTop="30dp"
     android:text="More" />
 
 </LinearLayout>

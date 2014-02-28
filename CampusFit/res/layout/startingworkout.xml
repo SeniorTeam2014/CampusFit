@@ -8,6 +8,7 @@
         android:id="@+id/editText1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="30sp"
         android:ems="10"
         android:text="GOAL: The goal of your warm-up is to prepare your muscles by increasing your body temperature. At the end, it is usually helpful to do some light stretching. \nCardio: 15-20 minutes of jogging at a medium pace"
         android:inputType="textMultiLine" >
@@ -20,15 +21,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:textSize="14sp"
-        android:text="Crunches:\t\t\t\t\t\t\t3sets\t\t12-15 reps\nBarbell Bench Press:\t\t3sets\t\t8-12 reps\nBack Extensions:\t\t\t3 sets\t\t12-15 reps\nSquats:\t\t\t\t\t\t\t\t3 sets\t\t15 reps\nStanding Calf Raises:\t3 sets\t\t15 reps\nPull-ups:\t\t\t\t\t\t\t3 sets\t\t5-10 reps\nBicycle crunches:\t\t\t3 sets\t\t8-12 reps\n\nCool down cardio: speed walking or slow jogging for 5 minutes"
+        android:textSize="30sp"
+        android:text="Crunches:\t\t\t\t\t\t\t\t\t\t\t3sets\t\t12-15 reps\nBarbell Bench Press:\t\t3sets\t\t8-12 reps\nBack Extensions:\t\t\t\t\t3 sets\t\t12-15 reps\nSquats:\t\t\t\t\t\t\t\t\t\t\t\t\t\t3 sets\t\t15 reps\nStanding Calf Raises:\t3 sets\t\t15 reps\nPull-ups:\t\t\t\t\t\t\t\t\t\t\t\t\t3 sets\t\t5-10 reps\nBicycle crunches:\t\t\t\t\t3 sets\t\t8-12 reps\n\nCool down cardio: speed walking or slow jogging for 5 minutes"
         android:inputType="textMultiLine" />
 
     <Button
         android:id="@+id/stretches"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150px"
+        android:layout_marginLeft="250dp"
         android:layout_marginTop="40px"
         android:text="Stretches" />
 
