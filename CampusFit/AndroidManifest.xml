@@ -48,6 +48,21 @@
             android:name="com.example.campusfit.SampleWorkouts" >
  		</activity>
                 
+ 		<activity
+            android:name="com.example.campusfit.Cooldown" >
+ 		</activity>
+ 		<activity
+            android:name="com.example.campusfit.WarmUp" >
+ 		</activity>
+ 		<activity
+            android:name="com.example.campusfit.SampleWork" >
+ 		</activity>
+ 		<activity
+            android:name="com.example.campusfit.Stretches" >
+ 		</activity>
+ 		<activity
+            android:name="com.example.campusfit.Stretches2" >
+ 		</activity>
     </application>
 
 </manifest>

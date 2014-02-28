@@ -4,23 +4,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <EditText
+    <TextView
         android:id="@+id/editText1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="GOAL: The goal of your cool down is to give your body adequate time to transition from a state of high-stress from fast motion to a state of much less intensity\n\nApproximate duartion: 10-15 minutes"
-        android:inputType="textMultiLine" >
+        android:inputType="textMultiLine"
+        android:text="GOAL: The goal of your cool down is to give your body adequate time to transition from a state of high-stress from fast motion to a state of much less intensity\n\nApproximate duartion: 10-15 minutes" >
 
         <requestFocus />
-    </EditText>
+    </TextView>
 
-    <EditText
+    <TextView
         android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Can include:\n- a lower intesity version of the same activity that your workout consisted of\n\nShould include:\n- low-intensity walking/jogging for up to 5 minutes\n- light stretching"
-        android:ems="10"
-        android:inputType="textMultiLine" />
+        android:layout_weight="0.21"
+        android:inputType="textMultiLine"
+        android:text="Can include:\n- a lower intesity version of the same activity that your workout consisted of\n\nShould include:\n- low-intensity walking/jogging for up to 5 minutes\n- light stretching" />
 
 </LinearLayout>
