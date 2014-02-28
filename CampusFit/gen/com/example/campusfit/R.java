@@ -35,7 +35,9 @@ public final class R {
         public static final int button1=0x7f080019;
         public static final int button2=0x7f08001a;
         public static final int button3=0x7f08001b;
+        public static final int create=0x7f080022;
         public static final int create_account=0x7f08001c;
+        public static final int delete=0x7f080023;
         public static final int editText1=0x7f080000;
         public static final int editText2=0x7f080004;
         public static final int editText3=0x7f080015;
