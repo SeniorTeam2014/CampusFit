@@ -3,6 +3,8 @@ package com.example.campusfit;
 import java.util.concurrent.ExecutionException;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.EditText;
 
 public class SignUp extends Activity implements OnClickListener {
 
+	@Override
 	public void onCreate(Bundle savedInstanceState) {	
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sign_up);
@@ -48,6 +51,13 @@ public class SignUp extends Activity implements OnClickListener {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}
+		
+		try {
+			Intent i1 = new Intent(this, MainActivity.class);
+			startActivity(i1);
+		} catch (ActivityNotFoundException e) {
+			e.printStackTrace();
 		}
 		
 		

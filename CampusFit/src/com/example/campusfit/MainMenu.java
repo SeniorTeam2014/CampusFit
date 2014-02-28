@@ -16,6 +16,7 @@ public class MainMenu extends Activity implements OnClickListener {
 		actionBar.show();
 	}
 	
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setActionBar("Main Menu");
 		super.onCreate(savedInstanceState);

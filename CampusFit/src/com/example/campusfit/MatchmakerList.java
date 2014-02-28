@@ -15,6 +15,7 @@ public class MatchmakerList extends ListActivity {
 	static final String[] list = new String[] { "Goals", "Interests", "Time",
 			"Gender", "Age" };
 
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setListAdapter(new ArrayAdapter<String>(this, R.layout.matchmaker, list));
@@ -23,6 +24,7 @@ public class MatchmakerList extends ListActivity {
 		listView.setClickable(true);
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
+			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
