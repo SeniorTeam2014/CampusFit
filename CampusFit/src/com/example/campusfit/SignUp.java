@@ -27,8 +27,8 @@ public class SignUp extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		// 'create account' button has been pressed. add functionality
 		EditText usernameinfo = (EditText)findViewById(R.id.editText1);
-		EditText passwordinfo = (EditText)findViewById(R.id.editText2);
-		EditText confirmpass = (EditText)findViewById(R.id.editText3);
+		EditText passwordinfo = (EditText)findViewById(R.id.editText5);
+		EditText confirmpass = (EditText)findViewById(R.id.editText6);
 		
 		String password = passwordinfo.getText().toString();
 		String username = usernameinfo.getText().toString();

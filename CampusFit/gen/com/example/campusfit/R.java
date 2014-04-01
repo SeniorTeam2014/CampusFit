@@ -37,6 +37,7 @@ public final class R {
         public static final int shoulder=0x7f02000d;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int LinearLayout02=0x7f08001d;
         public static final int TextView01=0x7f08000b;
         public static final int TextView02=0x7f08000e;
@@ -58,6 +59,28 @@ public final class R {
         public static final int list=0x7f080027;
         public static final int matchmaker=0x7f080008;
         public static final int more=0x7f080025;
+=======
+        public static final int LinearLayout02=0x7f080018;
+        public static final int action_settings=0x7f080027;
+        public static final int cooldown=0x7f080019;
+        public static final int create=0x7f080028;
+        public static final int create_account=0x7f08001f;
+        public static final int delete=0x7f080029;
+        public static final int editText1=0x7f080000;
+        public static final int editText2=0x7f080004;
+        public static final int editText3=0x7f080015;
+        public static final int editText4=0x7f080016;
+        public static final int editText5=0x7f08001c;
+        public static final int editText6=0x7f08001e;
+        public static final int enter=0x7f080005;
+        public static final int findatrainer=0x7f08000b;
+        public static final int imageView1=0x7f080021;
+        public static final int imageView2=0x7f080022;
+        public static final int imageView3=0x7f080024;
+        public static final int list=0x7f080025;
+        public static final int matchmaker=0x7f08000a;
+        public static final int more=0x7f080023;
+>>>>>>> ac7b51a55f383c3486c57544753b17d9e1bf75d9
         public static final int profile=0x7f080007;
         public static final int radio0=0x7f080017;
         public static final int radio1=0x7f080018;
@@ -66,6 +89,7 @@ public final class R {
         public static final int samplework=0x7f080020;
         public static final int sampleworkouts=0x7f080009;
         public static final int signup=0x7f080006;
+<<<<<<< HEAD
         public static final int stretches=0x7f080022;
         public static final int stretches2=0x7f080028;
         public static final int templates=0x7f08000a;
@@ -79,6 +103,22 @@ public final class R {
         public static final int toggleButton1=0x7f080012;
         public static final int warmup=0x7f08001f;
         public static final int workouts=0x7f080011;
+=======
+        public static final int stretches=0x7f080020;
+        public static final int stretches2=0x7f080026;
+        public static final int templates=0x7f080008;
+        public static final int textView1=0x7f080003;
+        public static final int textView2=0x7f080001;
+        public static final int textView3=0x7f080002;
+        public static final int textView4=0x7f08000e;
+        public static final int textView5=0x7f080011;
+        public static final int textView6=0x7f080014;
+        public static final int textView7=0x7f080017;
+        public static final int textView8=0x7f08001d;
+        public static final int toggleButton1=0x7f08000d;
+        public static final int warmup=0x7f08001a;
+        public static final int workouts=0x7f080009;
+>>>>>>> ac7b51a55f383c3486c57544753b17d9e1bf75d9
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
