@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="\t\t\t\t   Common Warm-ups"
+        android:ems="10" >
+        
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GOAL: The goal of your warm-up is to prepare your muscles by increasing your body temperature. At the end, it is usually helpful to do some light stretching"
+        android:ems="10"
+        android:textSize="25sp"
+        android:inputType="textMultiLine" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:text="2-3 minutes of jump rope\n50 jumping jacks\n20 squats (without weight)\n5 lunges\n10 forward leg swings\n10 side leg swings\n10 arms swings\n10-20 pushups"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/stretches2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="270dp"
+        android:text="Stretches" />
+
+</LinearLayout>

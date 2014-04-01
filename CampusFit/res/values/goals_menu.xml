@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="abs_option">Abs</string>
+    <string name="back_option">Back</string>
+    <string name="biceps_option">Biceps</string>
+    <string name="chest_option">Chest</string>
+    <string name="legs_option">Legs</string>
+    <string name="shoulders_option">Shoulders</string>
+    <string name="triceps_option">Triceps</string>
+
+</resources>
