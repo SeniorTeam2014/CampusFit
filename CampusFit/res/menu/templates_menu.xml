@@ -3,13 +3,9 @@
 
     <item
         android:id="@+id/create"
+        android:icon="@drawable/ic_additem"
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="Create Workout Template"/>
-    <item
-        android:id="@+id/delete"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="Delete Workout Template"/>
 
 </menu>

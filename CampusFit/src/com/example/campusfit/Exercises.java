@@ -18,8 +18,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class Templates extends ListActivity {
-
+public class Exercises extends ListActivity {
+	
 	ArrayList<String> val = new ArrayList<String>();
 	ArrayAdapter<String> adapter;
 
@@ -28,17 +28,13 @@ public class Templates extends ListActivity {
 		actionBar.setTitle(heading);
 		actionBar.show();
 	}
-
 	@Override
 	public void onCreate(Bundle i) {
 		showInstructions();
 
 		setActionBar("My Workout Templates");
 		super.onCreate(i);
-		//val.add("Upper Body Strength Training");
-		//val.add("Lower Body Strength Training");
-		val.add("Cardio Workout");
-		//val.add("Core and Agility Training");
+		val.add("Run");
 		adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, val);
 		setListAdapter(adapter);
@@ -59,7 +55,7 @@ public class Templates extends ListActivity {
 		alertDialogBuilder.setTitle("Templates Instructions");
 
 		alertDialogBuilder
-		.setMessage("Create a new workout template through the options menu in titlebar. Press template to edit, or hold and press to delete.")
+		.setMessage("Create a new exercise through the options menu in titlebar. Press template to edit, or hold and press to delete.")
 		.setCancelable(false)
 		.setPositiveButton("OK",new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog,int id) {
@@ -75,7 +71,7 @@ public class Templates extends ListActivity {
 	{   
 		final String item = (String) getListAdapter().getItem(position);
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);
-		alert.setTitle("Delete Template?"); 
+		alert.setTitle("Delete Exercise?"); 
 		alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {  
 			public void onClick(DialogInterface dialog, int whichButton) {  
 				val.remove(item);
@@ -94,9 +90,6 @@ public class Templates extends ListActivity {
 		alert.show();
 	}
 
-
-
-
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		String item = (String) getListAdapter().getItem(position);
@@ -110,9 +103,9 @@ public class Templates extends ListActivity {
 			startActivity(i1);
 		} catch (ActivityNotFoundException e) {
 			e.printStackTrace();
-		}
-	
+		}	
 	}
+
 
 
 	@Override
@@ -129,8 +122,8 @@ public class Templates extends ListActivity {
 		switch (item.getItemId()) {
 		case R.id.create:
 			AlertDialog.Builder alert = new AlertDialog.Builder(this);                 
-			alert.setTitle("Create Template");  
-			alert.setMessage("Name your workout:"); 
+			alert.setTitle("Create Exercise");  
+			alert.setMessage("Name of exercise:"); 
 			final EditText input = new EditText(this); 
 			alert.setView(input);
 			alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {  
@@ -160,3 +153,5 @@ public class Templates extends ListActivity {
 
 
 }
+	
+
