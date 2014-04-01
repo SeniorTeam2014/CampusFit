@@ -1,58 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:columnCount="4" >
 
-    <Button
+    <ImageButton
         android:id="@+id/profile"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Profile" />
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignLeft="@+id/matchmaker"
+        android:layout_alignTop="@+id/sampleworkouts"
+        android:background="@drawable/picture2" />
 
-    <Button
+    <ImageButton
         android:id="@+id/templates"
-        android:layout_width="250dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/matchmaker"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="111dp"
+        android:background="@drawable/picture4" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/profile"
         android:layout_below="@+id/profile"
+<<<<<<< HEAD
+        android:layout_marginRight="42dp"
+        android:text="" />
+=======
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80px"
         android:text="Templates" />
+>>>>>>> ac7b51a55f383c3486c57544753b17d9e1bf75d9
 
-    <Button
-        android:id="@+id/workouts"
-        android:layout_width="250dp"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/profile"
+        android:text="Profile"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+=======
         android:layout_below="@+id/templates"
         android:layout_marginTop="80px"
         android:layout_centerHorizontal="true"
         android:text="Workouts" />
+>>>>>>> ac7b51a55f383c3486c57544753b17d9e1bf75d9
 
-    <Button
-        android:id="@+id/matchmaker"
-        android:layout_width="250dp"
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/sampleworkouts"
+        android:text="Sample Workouts"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+=======
         android:layout_below="@+id/workouts"
         android:layout_marginTop="80px"
         android:layout_centerHorizontal="true"
         android:text="Match Maker" />
+>>>>>>> ac7b51a55f383c3486c57544753b17d9e1bf75d9
 
-    <Button
-        android:id="@+id/findatrainer"
-        android:layout_width="250dp"
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
+        android:layout_alignRight="@+id/findatrainer"
+        android:layout_below="@+id/findatrainer"
+        android:text="Find A Trainer"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+=======
         android:layout_alignLeft="@+id/matchmaker"
         android:layout_marginTop="80px"
         android:layout_below="@+id/matchmaker"
         android:text="Find a Trainer!" />
+>>>>>>> ac7b51a55f383c3486c57544753b17d9e1bf75d9
 
-    <Button
+    <ImageButton
         android:id="@+id/sampleworkouts"
-        android:layout_width="250dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="87dp"
+        android:layout_marginTop="54dp"
+        android:background="@drawable/picture1" />
+
+    <ImageButton
+        android:id="@+id/findatrainer"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignLeft="@+id/TextView01"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="57dp"
+        android:background="@drawable/picture6" />
+
+    <ImageButton
+        android:id="@+id/matchmaker"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_above="@+id/TextView03"
+        android:layout_alignLeft="@+id/templates"
+        android:background="@drawable/picture3" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
+        android:layout_alignBaseline="@+id/TextView03"
+        android:layout_alignBottom="@+id/TextView03"
+        android:layout_alignRight="@+id/matchmaker"
+        android:text="Match Maker"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/TextView04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView02"
+        android:layout_below="@+id/templates"
+        android:text="Templates"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageButton
+        android:id="@+id/workouts"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignRight="@+id/TextView03"
+        android:layout_alignTop="@+id/templates"
+        android:background="@drawable/picture5" />
+
+    <TextView
+        android:id="@+id/TextView05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView03"
+        android:layout_below="@+id/workouts"
+        android:layout_marginLeft="20dp"
+        android:text="Workouts"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+=======
         android:layout_marginTop="80px"
         android:layout_alignLeft="@+id/findatrainer"
         android:layout_below="@+id/findatrainer"
         android:text="Sample Workouts" />
+>>>>>>> ac7b51a55f383c3486c57544753b17d9e1bf75d9
 
 </RelativeLayout>
