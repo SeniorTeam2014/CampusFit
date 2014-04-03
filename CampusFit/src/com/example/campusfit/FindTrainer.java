@@ -1,6 +1,11 @@
 package com.example.campusfit;
 
+import java.util.ArrayList;
+
+import android.app.ActionBar;
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,27 +17,78 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class FindTrainer extends ListActivity {
 
-	static final String[] list = new String[] { "Proximity", "Goal", "Gender"};
-
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.matchmaker, list));
-		final ListView listView = getListView();
-		listView.setTextFilterEnabled(true);
-		listView.setClickable(true);
-		listView.setOnItemClickListener(new OnItemClickListener() {
-
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-
-				Toast.makeText(getApplicationContext(),
-						((TextView) view).getText(), Toast.LENGTH_SHORT).show();
-					
-				
-			}
-
-		});
+	ArrayList<String> val = new ArrayList<String>();
+	ArrayAdapter<String> adapter;
+	
+	public void setActionBar(String heading) {
+		ActionBar actionBar = getActionBar();
+		actionBar.setTitle(heading);
+		actionBar.show();
+	}
+	
+	public void onCreate(Bundle i) {
+		
+		setActionBar("Match Maker");
+		showInstructions();
+		super.onCreate(i);
+		
+		adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, val);
+		setListAdapter(adapter);
+		final ListView lv = getListView();
+		lv.setOnItemClickListener( new AdapterView.OnItemClickListener() { 
+			@Override 
+			public void onItemClick( AdapterView<?> av, View v, int pos, long id ) { 
+				onListItemClick(lv, v, pos, id); 
+				//return false; 
+			} 
+		} );
+		val.add("A trainer");
+		
+		//*** Ask server for list of matches based on personal info.
+		//*** Populate arraylist with matches: val.add("USERNAME HERE");
 
 	}
+	
+	private void showInstructions() {
+		// AlertDialogue for templates instructions
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		alertDialogBuilder.setTitle("Match Maker");
+
+		alertDialogBuilder
+		.setMessage("The trainer finder will automatically suggest trainers based on your profile. Press on a username to see information.")
+		.setCancelable(false)
+		.setPositiveButton("OK",new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog,int id) {
+				// functionality for button press 
+			}
+		});
+		AlertDialog alertDialog = alertDialogBuilder.create();
+		alertDialog.show();
+
+	}
+	
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		String item = (String) getListAdapter().getItem(position);
+		Toast.makeText(this, item, Toast.LENGTH_LONG).show();
+
+		//*** Ask server for trainer information and display in message
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		alertDialogBuilder.setTitle("Match Maker");
+
+		alertDialogBuilder
+		.setMessage("TRAINER INFORMATION HERE")
+		.setCancelable(false)
+		.setPositiveButton("OK",new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog,int id) {
+				// functionality for button press 
+			}
+		});
+		AlertDialog alertDialog = alertDialogBuilder.create();
+		alertDialog.show();
+
+	}
+	
 
 }

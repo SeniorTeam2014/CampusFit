@@ -55,6 +55,9 @@ public class Templates extends ListActivity {
 			} 
 		} );
 
+		//*** Ask server for user's templates
+		// add template to list: 'val.add("template name here");'
+
 	}
 
 	private void showInstructions() {
@@ -86,12 +89,14 @@ public class Templates extends ListActivity {
 				val.remove(item);
 				adapter.notifyDataSetChanged();
 				switchscreen=true;
+
+				//*** Remove template from DB
+
+
 				return;                  
 			}  
 		});  
-
 		alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
-
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
 				switchscreen=true;
@@ -133,36 +138,32 @@ public class Templates extends ListActivity {
 	// menu item has been selected
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// check if create or delete was pressed
-		switch (item.getItemId()) {
-		case R.id.create:
-			AlertDialog.Builder alert = new AlertDialog.Builder(this);                 
-			alert.setTitle("Create Template");  
-			alert.setMessage("Name your workout:"); 
-			final EditText input = new EditText(this); 
-			alert.setView(input);
-			alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {  
-				public void onClick(DialogInterface dialog, int whichButton) {  
-					String s = input.getText().toString();
-					val.add(s);
-					return;                  
-				}  
-			});  
+		AlertDialog.Builder alert = new AlertDialog.Builder(this);                 
+		alert.setTitle("Create Template");  
+		alert.setMessage("Name your workout:"); 
+		final EditText input = new EditText(this); 
+		alert.setView(input);
+		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {  
+			public void onClick(DialogInterface dialog, int whichButton) {  
+				String template_name = input.getText().toString();
+				val.add(template_name);
 
-			alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-
-				public void onClick(DialogInterface dialog, int which) {
-					// TODO Auto-generated method stub
-					return;   
-				}
-			});
-			alert.show();
-			return true;
+				//*** Send template name back to server
 
 
 
-		default: return true;
-		}
+
+				return;                  
+			}  
+		});  
+		alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				return;   
+			}
+		});
+		alert.show();
+		return true;
 
 	}
 

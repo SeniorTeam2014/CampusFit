@@ -88,7 +88,7 @@ public final class R {
         public static final int textView8=0x7f090016;
         public static final int trainer_no=0x7f090021;
         public static final int trainer_yes=0x7f090020;
-        public static final int update_infor=0x7f090022;
+        public static final int update_info=0x7f090022;
         public static final int username=0x7f090013;
         public static final int warmup=0x7f090025;
         public static final int workouts=0x7f090011;

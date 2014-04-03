@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.Spinner;
 
 public class SignUp extends Activity implements OnClickListener {
 
@@ -37,15 +39,43 @@ public class SignUp extends Activity implements OnClickListener {
 		// 'create account' button has been pressed. add functionality
 		EditText usernameinfo = (EditText)findViewById(R.id.username);
 		EditText passwordinfo = (EditText)findViewById(R.id.password);
-		//EditText confirmpass = (EditText)findViewById(R.id.editText6);
+		EditText ageinfo = (EditText)findViewById(R.id.age);
+		EditText phoneinfo = (EditText)findViewById(R.id.phonenumber);
+		RadioButton male = (RadioButton)findViewById(R.id.male_radio);
+		//RadioButton female = (RadioButton)findViewById(R.id.female_radio);
+		Spinner loc = (Spinner)findViewById(R.id.location_spinner);
+		Spinner goal = (Spinner)findViewById(R.id.goal_spinner);
+		RadioButton traineryes = (RadioButton)findViewById(R.id.trainer_yes);
+		//RadioButton trainerno = (RadioButton)findViewById(R.id.trainer_no);
 		
+		
+		
+		//*** INFORMATION TO BE SENT TO SERVER
 		String password = passwordinfo.getText().toString();
 		String username = usernameinfo.getText().toString();
-		//String passconfirm = confirmpass.getText().toString();
+		String age = ageinfo.getText().toString();
+		String phone = phoneinfo.getText().toString();
+		String gender;
+		if (male.isChecked()) gender ="male";
+		else gender = "female";
+		String location = loc.getSelectedItem().toString();
+		String primary_goal = goal.getSelectedItem().toString();
+		String trainer;
+		if (traineryes.isChecked()) trainer = "yes";
+		else trainer = "no";
 		
+		//***
+		/*
 		Log.v("checl", username);
 		Log.v("checl", password);
-		//Log.v("checl", passconfirm);
+		Log.v("checl", age);
+		Log.v("checl", phone);
+		Log.v("checl", gender);
+		Log.v("checl", location);
+		Log.v("checl", primary_goal);
+		Log.v("checl", trainer);
+		*/
+		
 		
 		JSONFunctions j = new JSONFunctions();
 		
@@ -62,6 +92,11 @@ public class SignUp extends Activity implements OnClickListener {
 				e.printStackTrace();
 			}
 		}
+		
+		
+		
+		
+		
 		
 		try {
 			Intent i1 = new Intent(this, MainActivity.class);

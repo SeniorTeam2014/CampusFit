@@ -25,6 +25,7 @@ public class Exercises extends ListActivity {
 	final CharSequence[] how_to_measure={"Repetitions","Distance","Time"}; 
 	String measure_option;
 	String exercise_option;
+	String exercise_selected;
 	boolean measure_option_selected;
 	boolean delete_lock;
 
@@ -33,11 +34,12 @@ public class Exercises extends ListActivity {
 		actionBar.setTitle(heading);
 		actionBar.show();
 	}
-	
+
 	@Override
 	public void onCreate(Bundle i) {
 		showInstructions();
 		exercise_option="<blank>";
+		exercise_selected="";
 		measure_option_selected=false;
 		delete_lock = true;
 
@@ -67,6 +69,9 @@ public class Exercises extends ListActivity {
 			} 
 		} );
 
+		//*** Ask server for user's exercises
+		// add exercise to list: 'val.add("exercise name here");'
+
 	}
 
 	private void showInstructions() {
@@ -88,7 +93,9 @@ public class Exercises extends ListActivity {
 
 	public void askForDetails(String s){
 		measure_option_selected=false;
-
+		final String name = s;
+		//System.out.println("!!!!!!!!!!String s: "+s);
+		
 		// Creating and Building the Dialog 
 		AlertDialog.Builder measurements = new AlertDialog.Builder(this);
 		measurements.setTitle("How will you measure '"+s+"'?");
@@ -122,16 +129,16 @@ public class Exercises extends ListActivity {
 				{
 					if (measure_option.equals("repetitions"))
 					{
-						askForReps();
+						askForReps(name);
 
 					}
 					else if (measure_option.equals("distance"))
 					{
-						askForDistance();
+						askForDistance(name);
 					}
 					else if (measure_option.equals("time"))
 					{
-						askForTime();
+						askForTime(name);
 					}
 				}
 
@@ -142,7 +149,7 @@ public class Exercises extends ListActivity {
 	}
 
 
-	public void askForReps()
+	public void askForReps(final String name)
 	{
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);                 
 		alert.setTitle("Repetitions");  
@@ -159,13 +166,13 @@ public class Exercises extends ListActivity {
 		alert.setOnDismissListener(new DialogInterface.OnDismissListener() {
 			@Override
 			public void onDismiss(final DialogInterface dialog) {
-				updateArrayAdapter(exercise_option);
+				updateArrayAdapter(name);
 			}
-			});
+		});
 		alert.show();
 
 	}
-	public void askForDistance()
+	public void askForDistance(final String name)
 	{
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);                 
 		alert.setTitle("Distance");  
@@ -182,14 +189,14 @@ public class Exercises extends ListActivity {
 		alert.setOnDismissListener(new DialogInterface.OnDismissListener() {
 			@Override
 			public void onDismiss(final DialogInterface dialog) {
-				updateArrayAdapter(exercise_option);
+				updateArrayAdapter(name);
 			}
-			});
+		});
 
 		alert.show();
 
 	}
-	public void askForTime()
+	public void askForTime(final String name)
 	{
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);                 
 		alert.setTitle("Time");  
@@ -206,9 +213,9 @@ public class Exercises extends ListActivity {
 		alert.setOnDismissListener(new DialogInterface.OnDismissListener() {
 			@Override
 			public void onDismiss(final DialogInterface dialog) {
-				updateArrayAdapter(exercise_option);
+				updateArrayAdapter(name);
 			}
-			});
+		});
 		alert.show();
 
 	}
@@ -224,6 +231,10 @@ public class Exercises extends ListActivity {
 			public void onClick(DialogInterface dialog, int whichButton) {  
 				val.remove(item);
 				adapter.notifyDataSetChanged();
+				
+				//*** delete exercise from DB
+				
+				
 				return;                  
 			}  
 		});  
@@ -244,13 +255,6 @@ public class Exercises extends ListActivity {
 		String item = (String) getListAdapter().getItem(position);
 		Toast.makeText(this, item+" exercise", Toast.LENGTH_LONG).show();
 
-		// when template is pressed, add items to it
-		//if (delete_lock)
-		//{
-		//	askForDetails(item);
-		//}
-		//updateArrayAdapter(exercise_option);
-
 	}
 
 
@@ -265,50 +269,48 @@ public class Exercises extends ListActivity {
 	// menu item has been selected
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// check if create or delete was pressed
-		switch (item.getItemId()) {
-		case R.id.create:
-			AlertDialog.Builder alert = new AlertDialog.Builder(this);                 
-			alert.setTitle("Create Exercise");  
-			alert.setMessage("Name of exercise:"); 
-			final EditText input = new EditText(this); 
-			alert.setView(input);
-			alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {  
-				public void onClick(DialogInterface dialog, int whichButton) {  
-					String s = input.getText().toString();
-					askForDetails(s);
-					//System.out.println(">>> "+exercise_option);
+		AlertDialog.Builder alert = new AlertDialog.Builder(this);                 
+		alert.setTitle("Create Exercise");  
+		alert.setMessage("Name of exercise:"); 
+		final EditText input = new EditText(this); 
+		alert.setView(input);
+		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {  
+			public void onClick(DialogInterface dialog, int whichButton) {  
+				String s = input.getText().toString();
+				askForDetails(s);
+				//System.out.println(">>> "+exercise_option);
 
-					val.add("'"+s+"'");
-					return;                  
-				}  
-			});  
+				val.add("'"+s+"'");				
+				return;                  
+			}  
+		});  
+		alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				return;   
+			}
+		});
+		alert.show();
+		return true;		
 
-			alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-
-				public void onClick(DialogInterface dialog, int which) {
-					// TODO Auto-generated method stub
-					return;   
-				}
-			});
-			alert.show();
-			return true;
-
-		default: return true;
-		}
 	}
 
-	public void updateArrayAdapter(String options)
+	public void updateArrayAdapter(String name_of_exercise)
 	{
+		System.out.println("name_of_exercise "+name_of_exercise);
 		for (String s : val)
 		{
-			//System.out.println("found string: "+s);
-			//System.out.println("option: "+options);
-			if (s.equals(exercise_option));
-			
-				//System.out.println("!!! "+val.indexOf(s));
+			//System.out.println("s: "+s);
+			//System.out.println("exercise_option: " +exercise_option);
+			if (s.equals("'"+name_of_exercise+"'")){
+
 				int x = val.indexOf(s);
-				val.set(x, s+" for "+options);
+				val.set(x, s+" for "+exercise_option);
+				
+				//*** Send exercise string back to server
+				
+				
+			}
 		}
 
 	}
