@@ -28,7 +28,7 @@ public class FindTrainer extends ListActivity {
 	
 	public void onCreate(Bundle i) {
 		
-		setActionBar("Match Maker");
+		setActionBar("Find Trainer");
 		showInstructions();
 		super.onCreate(i);
 		
@@ -53,7 +53,7 @@ public class FindTrainer extends ListActivity {
 	private void showInstructions() {
 		// AlertDialogue for templates instructions
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-		alertDialogBuilder.setTitle("Match Maker");
+		alertDialogBuilder.setTitle("Find a Trainer");
 
 		alertDialogBuilder
 		.setMessage("The trainer finder will automatically suggest trainers based on your profile. Press on a username to see information.")
