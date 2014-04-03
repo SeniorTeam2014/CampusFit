@@ -3,8 +3,11 @@ package com.example.campusfit;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup.MarginLayoutParams;
+import android.widget.EditText;
 
 public class Profile extends Activity implements OnClickListener {
 
@@ -16,9 +19,10 @@ public class Profile extends Activity implements OnClickListener {
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		setActionBar("Profile");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.profile);
+		setActionBar("Profile");
+
 	}
 	
 	@Override

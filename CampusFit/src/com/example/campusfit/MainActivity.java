@@ -36,6 +36,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		// setup 'enter' button that goes to the main menu xml
 		View enter = findViewById(R.id.enter);
 		enter.setOnClickListener(this);
+		
+		View edittext1 = findViewById(R.id.editText1);
+		edittext1.requestFocus();
 	}
 
 	@Override
