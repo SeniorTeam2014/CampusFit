@@ -5,6 +5,6 @@
         android:id="@+id/create"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="Create Workout Template"/>
+        android:title="Add new exercise"/>
 
 </menu>

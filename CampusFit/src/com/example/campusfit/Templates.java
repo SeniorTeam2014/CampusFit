@@ -22,6 +22,8 @@ public class Templates extends ListActivity {
 
 	ArrayList<String> val = new ArrayList<String>();
 	ArrayAdapter<String> adapter;
+	Intent i1;
+	boolean switchscreen;
 
 	public void setActionBar(String heading) {
 		ActionBar actionBar = getActionBar();
@@ -31,13 +33,15 @@ public class Templates extends ListActivity {
 
 	@Override
 	public void onCreate(Bundle i) {
+		i1 = new Intent(this, Exercises.class);
+		switchscreen = true;
 		showInstructions();
 
 		setActionBar("My Workout Templates");
 		super.onCreate(i);
 		//val.add("Upper Body Strength Training");
 		//val.add("Lower Body Strength Training");
-		val.add("Cardio Workout");
+		//val.add("Cardio Workout");
 		//val.add("Core and Agility Training");
 		adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, val);
@@ -73,6 +77,7 @@ public class Templates extends ListActivity {
 
 	public void onLongListItemClick(View v, int position, long id) 
 	{   
+		switchscreen=false;
 		final String item = (String) getListAdapter().getItem(position);
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);
 		alert.setTitle("Delete Template?"); 
@@ -80,6 +85,7 @@ public class Templates extends ListActivity {
 			public void onClick(DialogInterface dialog, int whichButton) {  
 				val.remove(item);
 				adapter.notifyDataSetChanged();
+				switchscreen=true;
 				return;                  
 			}  
 		});  
@@ -88,6 +94,7 @@ public class Templates extends ListActivity {
 
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
+				switchscreen=true;
 				return;   
 			}
 		});
@@ -101,17 +108,18 @@ public class Templates extends ListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		String item = (String) getListAdapter().getItem(position);
 		Toast.makeText(this, item+" template", Toast.LENGTH_LONG).show();
-		
+
 		// when template is pressed, add items to it
-		
+
 		//create a new screen with some options (type of exercise, repetitions, time, distance)
-		try {
-			Intent i1 = new Intent(this, Exercises.class);
-			startActivity(i1);
-		} catch (ActivityNotFoundException e) {
-			e.printStackTrace();
+		if (switchscreen){
+			try {
+				i1.putExtra("templatename", item);
+				startActivity(i1);
+			} catch (ActivityNotFoundException e) {
+				e.printStackTrace();
+			}
 		}
-	
 	}
 
 

@@ -43,9 +43,9 @@ public final class R {
         public static final int TextView03=0x7f08000d;
         public static final int TextView04=0x7f080010;
         public static final int TextView05=0x7f080012;
-        public static final int action_settings=0x7f08002c;
+        public static final int action_settings=0x7f08002d;
         public static final int cooldown=0x7f08001f;
-        public static final int create=0x7f08002d;
+        public static final int create=0x7f08002c;
         public static final int create_account=0x7f080025;
         public static final int editText1=0x7f080000;
         public static final int editText2=0x7f080004;
@@ -101,8 +101,9 @@ public final class R {
         public static final int workout=0x7f03000d;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
-        public static final int templates_menu=0x7f070001;
+        public static final int exercises_menu=0x7f070000;
+        public static final int main=0x7f070001;
+        public static final int templates_menu=0x7f070002;
     }
     public static final class string {
         public static final int abs_option=0x7f050000;
