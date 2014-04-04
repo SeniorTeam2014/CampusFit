@@ -14,8 +14,10 @@ public class SampleWorkouts extends Activity implements OnClickListener {
 		actionBar.setTitle(heading);
 		actionBar.show();
 	}
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {	
+		setActionBar("Sample Workouts");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sampleworkout);
 

@@ -68,17 +68,19 @@ public class MainActivity extends Activity implements OnClickListener {
 			// enter button is pressed, goto main menu
 			EditText usernameinfo = (EditText)findViewById(R.id.editText1);
 			EditText passwordinfo = (EditText)findViewById(R.id.editText2);
-
+			
+			
 			String password = passwordinfo.getText().toString();
 			String username = usernameinfo.getText().toString();
-
+			
+			
 
 			JSONFunctions j = new JSONFunctions();
 
 			if(password != null && username != null)
 			{
 				try {
-					j.execute("http://54.245.123.104/login.php?uName=" + username).get();
+					j.execute("http://54.245.123.104/profile.php?uName=" + username).get();
 				} catch (InterruptedException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

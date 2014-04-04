@@ -55,9 +55,10 @@ public class SignUp extends Activity implements OnClickListener {
 		String username = usernameinfo.getText().toString();
 		String age = ageinfo.getText().toString();
 		String phone = phoneinfo.getText().toString();
+	
 		String gender;
-		if (male.isChecked()) gender ="male";
-		else gender = "female";
+		if (male.isChecked()) gender ="0";
+		else gender = "1";
 		String location = loc.getSelectedItem().toString();
 		String primary_goal = goal.getSelectedItem().toString();
 		String trainer;
@@ -78,19 +79,13 @@ public class SignUp extends Activity implements OnClickListener {
 		
 		
 		JSONFunctions j = new JSONFunctions();
-		
+		location = "nigger land";
+		location = location.replace(" ", "%20");
 		//if(password.equals(passconfirm))
 		if(!password.isEmpty())
 		{
-			try {
-				j.execute("http://54.245.123.104/register.php?uName=" + username + "&uPass=" + password).get();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ExecutionException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		j.execute("http://54.245.123.104/signup.php?uName=" + username + "&uPass=" + password + "&uGend="+ gender + "&uAge=" + age + "&uPhone="+ phone + "&uLoc=" + location);
+//		j.execute("http://54.245.123.104/register.php?uName=" + username + "&uPass=" + password).get();
 		}
 		
 		

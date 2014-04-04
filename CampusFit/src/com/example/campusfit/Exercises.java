@@ -1,6 +1,7 @@
 package com.example.campusfit;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 import android.app.ActionBar;
 import android.app.AlertDialog;
@@ -71,7 +72,20 @@ public class Exercises extends ListActivity {
 
 		//*** Ask server for user's exercises
 		// add exercise to list: 'val.add("exercise name here");'
-
+		RetrieveExercise j = new RetrieveExercise();
+		
+		try {
+			System.out.println("table: " + GlobalVariables.templates.get(0));
+			j.execute("http://54.245.123.104/exercise.php?tName=" +GlobalVariables.templates.get(0)).get();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		for(int k = 0; k < GlobalVariables.exercises.size(); k++)
+			val.add(GlobalVariables.exercises.get(k));
 	}
 
 	private void showInstructions() {
@@ -231,9 +245,19 @@ public class Exercises extends ListActivity {
 			public void onClick(DialogInterface dialog, int whichButton) {  
 				val.remove(item);
 				adapter.notifyDataSetChanged();
-				
+				JSONFunctions2 j = new JSONFunctions2();
+				String[] splited = item.split("\\s+");
+				try {
+					j.execute("http://54.245.123.104/removeExercise.php?eName=" +splited[0]).get();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ExecutionException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				//*** delete exercise from DB
-				
+				  
 				
 				return;                  
 			}  
@@ -308,7 +332,19 @@ public class Exercises extends ListActivity {
 				val.set(x, s+" for "+exercise_option);
 				
 				//*** Send exercise string back to server
-				
+				JSONFunctions2 j = new JSONFunctions2();
+				exercise_option = exercise_option.replace(" ", "%20");
+				name_of_exercise = name_of_exercise.replace(" ", "%20");
+				try {
+					System.out.println("http://54.245.123.104/exerciseCreate.php?uName=" + GlobalVariables.username +"&tName="+ GlobalVariables.templates.get(0) + "&eName=" +name_of_exercise + "&eDes=" + exercise_option);
+					j.execute("http://54.245.123.104/exerciseCreate.php?uName=" + GlobalVariables.username +"&tName="+ GlobalVariables.templates.get(0) + "&eName=" +name_of_exercise + "&eDes=" + exercise_option).get();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ExecutionException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 			}
 		}

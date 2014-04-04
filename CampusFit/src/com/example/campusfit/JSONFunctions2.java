@@ -3,6 +3,7 @@ package com.example.campusfit;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -14,17 +15,15 @@ import org.json.JSONObject;
 import android.os.AsyncTask;
 import android.util.Log;
 
-public class JSONFunctions extends AsyncTask<String,Void,String> {
+public class JSONFunctions2  extends AsyncTask<String,Void,String> {
 	InputStream is = null;
 	String result = "";
 	String username = "test";
 	String password = "test";
-	String age = "test";
-	String location = "test";
-	String gender = "test";
-	String phone = "test";
+	
 	@Override
 	protected String doInBackground(String... params) {
+		
 		try {
 
 	        HttpClient httpclient = new DefaultHttpClient();
@@ -53,30 +52,7 @@ public class JSONFunctions extends AsyncTask<String,Void,String> {
 	        Log.e("log_tag", "Error converting result "+e.toString());
 	}
 		
-		try{
-	        
-			JSONObject jObject = null;
-			jObject = new JSONObject(result);
-			username = (String)jObject.get("uName");
-			password = (String)jObject.get("uPass");
-			GlobalVariables.username = (String)jObject.get("uName");
-			GlobalVariables.password = (String)jObject.get("uPass");
-			GlobalVariables.phone = (String)jObject.get("Phone");
-			GlobalVariables.gender = (String)jObject.get("Gender");
-			GlobalVariables.age = (String)jObject.get("Age");
-			GlobalVariables.phone = (String)jObject.get("Phone");
-			GlobalVariables.location = (String)jObject.get("Location"); 
-			//Log.v("json user", getUsername());
-	}catch(JSONException e){
-	        Log.e("log_tag", "Error parsing data "+e.toString());
-	        GlobalVariables.username = "test1";
-	        password = "test1";
-	        GlobalVariables.age = "test1";
-	        GlobalVariables.username = "test1";
-	        GlobalVariables.gender = "test1";
-	        GlobalVariables.location = "test1";
-	        GlobalVariables.phone = "test1";
-		}
+				
 	
 		return null;
 	}
@@ -85,14 +61,5 @@ public class JSONFunctions extends AsyncTask<String,Void,String> {
 	protected void onPostExecute(String result) {
 		//do nothing
 	}
-	
-	public String getUsername()
-	{
-		return username;
-	}
-	
-	public String getPassword()
-	{
-		return password;
-	}
+
 }

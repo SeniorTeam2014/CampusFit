@@ -14,16 +14,10 @@ import org.json.JSONObject;
 import android.os.AsyncTask;
 import android.util.Log;
 
-public class JSONFunctions extends AsyncTask<String,Void,String> {
+public class RetrieveTemplate extends AsyncTask<String,Void,String> {
 	InputStream is = null;
 	String result = "";
-	String username = "test";
-	String password = "test";
-	String age = "test";
-	String location = "test";
-	String gender = "test";
-	String phone = "test";
-	@Override
+		@Override
 	protected String doInBackground(String... params) {
 		try {
 
@@ -53,31 +47,25 @@ public class JSONFunctions extends AsyncTask<String,Void,String> {
 	        Log.e("log_tag", "Error converting result "+e.toString());
 	}
 		
-		try{
-	        
+		try{ 
+	          
 			JSONObject jObject = null;
 			jObject = new JSONObject(result);
-			username = (String)jObject.get("uName");
-			password = (String)jObject.get("uPass");
-			GlobalVariables.username = (String)jObject.get("uName");
-			GlobalVariables.password = (String)jObject.get("uPass");
-			GlobalVariables.phone = (String)jObject.get("Phone");
-			GlobalVariables.gender = (String)jObject.get("Gender");
-			GlobalVariables.age = (String)jObject.get("Age");
-			GlobalVariables.phone = (String)jObject.get("Phone");
-			GlobalVariables.location = (String)jObject.get("Location"); 
-			//Log.v("json user", getUsername());
+			System.out.println("Check: " + GlobalVariables.templates.size());
+			if(GlobalVariables.templates.contains((String)jObject.get("tName")))
+				System.out.println("cool");
+			else
+				GlobalVariables.templates.add((String)jObject.get("tName"));
+			//GlobalVariables.templates.add((String)jObject.get("tName"));
+			//GlobalVariables.templates.add((String)jObject.get("tName"));
+			
+			//for(int i = 0; i < GlobalVariables.templates.size(); i++)
+				//System.out.println(GlobalVariables.templates.get(i));
+			
 	}catch(JSONException e){
 	        Log.e("log_tag", "Error parsing data "+e.toString());
-	        GlobalVariables.username = "test1";
-	        password = "test1";
-	        GlobalVariables.age = "test1";
-	        GlobalVariables.username = "test1";
-	        GlobalVariables.gender = "test1";
-	        GlobalVariables.location = "test1";
-	        GlobalVariables.phone = "test1";
-		}
-	
+	        
+	}
 		return null;
 	}
 	
@@ -86,13 +74,4 @@ public class JSONFunctions extends AsyncTask<String,Void,String> {
 		//do nothing
 	}
 	
-	public String getUsername()
-	{
-		return username;
-	}
-	
-	public String getPassword()
-	{
-		return password;
-	}
 }

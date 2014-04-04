@@ -41,42 +41,40 @@ public final class R {
         public static final int shoulder=0x7f02000d;
     }
     public static final class id {
-        public static final int LinearLayout02=0x7f090023;
+        public static final int LinearLayout01=0x7f090027;
+        public static final int LinearLayout02=0x7f090029;
         public static final int TextView01=0x7f09000c;
         public static final int TextView02=0x7f09000f;
         public static final int TextView03=0x7f09000d;
         public static final int TextView04=0x7f090010;
         public static final int TextView05=0x7f090012;
-        public static final int action_settings=0x7f090032;
+        public static final int action_settings=0x7f090030;
         public static final int age=0x7f090015;
-        public static final int calendarView1=0x7f090030;
+        public static final int calendarView1=0x7f09002e;
         public static final int cooldown=0x7f090024;
-        public static final int create=0x7f090031;
-        public static final int create_account=0x7f090028;
+        public static final int create=0x7f09002f;
+        public static final int create_account=0x7f090026;
         public static final int editText1=0x7f090000;
         public static final int editText2=0x7f090004;
-        public static final int editText3=0x7f090026;
-        public static final int editText4=0x7f09002c;
+        public static final int editText3=0x7f09002c;
         public static final int enter=0x7f090005;
         public static final int female_radio=0x7f09001a;
         public static final int findatrainer=0x7f09000e;
         public static final int goal_spinner=0x7f09001e;
-        public static final int imageView1=0x7f09002a;
-        public static final int imageView2=0x7f09002b;
-        public static final int imageView3=0x7f09002e;
+        public static final int imageView1=0x7f090028;
+        public static final int imageView2=0x7f09002a;
+        public static final int imageView3=0x7f09002b;
         public static final int list=0x7f090007;
         public static final int location_spinner=0x7f09001c;
         public static final int male_radio=0x7f090019;
         public static final int matchmaker=0x7f090009;
-        public static final int more=0x7f09002d;
         public static final int password=0x7f090014;
         public static final int phonenumber=0x7f090017;
         public static final int profile=0x7f090008;
-        public static final int samplework=0x7f090027;
+        public static final int samplework=0x7f090025;
         public static final int sampleworkouts=0x7f09000a;
         public static final int signup=0x7f090006;
-        public static final int stretches=0x7f090029;
-        public static final int stretches2=0x7f09002f;
+        public static final int stretches2=0x7f09002d;
         public static final int templates=0x7f09000b;
         public static final int textView1=0x7f090003;
         public static final int textView2=0x7f090001;
@@ -90,7 +88,7 @@ public final class R {
         public static final int trainer_yes=0x7f090020;
         public static final int update_info=0x7f090022;
         public static final int username=0x7f090013;
-        public static final int warmup=0x7f090025;
+        public static final int warmup=0x7f090023;
         public static final int workouts=0x7f090011;
     }
     public static final class layout {

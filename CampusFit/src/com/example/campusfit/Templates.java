@@ -1,6 +1,7 @@
 package com.example.campusfit;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 import android.app.ActionBar;
 import android.app.AlertDialog;
@@ -54,10 +55,23 @@ public class Templates extends ListActivity {
 				return false; 
 			} 
 		} );
-
+		
 		//*** Ask server for user's templates
 		// add template to list: 'val.add("template name here");'
-
+		RetrieveTemplate j = new RetrieveTemplate();
+		
+		try {
+			System.out.println(GlobalVariables.username);
+			j.execute("http://54.245.123.104/templateTemp.php?uName=" + GlobalVariables.username).get();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		for(int k = 0; k < GlobalVariables.templates.size(); k++)
+			val.add(GlobalVariables.templates.get(k));
 	}
 
 	private void showInstructions() {
@@ -89,10 +103,20 @@ public class Templates extends ListActivity {
 				val.remove(item);
 				adapter.notifyDataSetChanged();
 				switchscreen=true;
-
+				
 				//*** Remove template from DB
-
-
+				JSONFunctions2 j = new JSONFunctions2();
+				
+				try {
+					j.execute("http://54.245.123.104/templateDelete.php?tName=" + item).get();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ExecutionException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				GlobalVariables.templates.remove(item);
 				return;                  
 			}  
 		});  
@@ -147,9 +171,17 @@ public class Templates extends ListActivity {
 			public void onClick(DialogInterface dialog, int whichButton) {  
 				String template_name = input.getText().toString();
 				val.add(template_name);
-
+				JSONFunctions2 j = new JSONFunctions2();
 				//*** Send template name back to server
-
+				try {
+					j.execute("http://54.245.123.104/templateCreate.php?uName=" + GlobalVariables.username + "&tName="+ template_name).get();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ExecutionException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
 
 

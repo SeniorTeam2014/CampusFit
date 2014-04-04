@@ -1,28 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+
 
     <TextView
         android:id="@+id/editText1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
         android:inputType="textMultiLine"
-        android:text="GOAL: The goal of your cool down is to give your body adequate time to transition from a state of high-stress from fast motion to a state of much less intensity\n\nApproximate duartion: 10-15 minutes" >
-
-        <requestFocus />
-    </TextView>
+        android:layout_margin="20dp"
+        android:text="GOAL: The goal of your cool down is to give your body adequate time to transition from a state of high-stress from fast motion to a state of much less intensity\n\nApproximate duration: 10-15 minutes"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:textSize="30sp"
-        android:layout_weight="0.21"
+        android:layout_margin="20dp"
         android:inputType="textMultiLine"
-        android:text="Can include:\n- a lower intesity version of the same activity that your workout consisted of\n\nShould include:\n- low-intensity walking/jogging for up to 5 minutes\n- light stretching" />
+        android:text="Can include:\n- a lower intesity version of the same activity that your workout consisted of\n\nShould include:\n- low-intensity walking/jogging for up to 5 minutes\n- light stretching"
+        android:textSize="30sp" />
+
 
 </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

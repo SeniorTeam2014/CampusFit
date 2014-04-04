@@ -5,79 +5,79 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/editText1"
-        android:layout_width="match_parent"
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Beginner&apos;s Guide to Working Out" >
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="Beginner&apos;s guide to working out"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp" />
 
-        <requestFocus />
-    </TextView>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="Every workout should consist of three parts:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:gravity="center"
-        android:text="Every workout should consist of 3 parts: \n\t 1. Warm-Up \n\t 2. Exercise of your own choice \n\t 3. Cooldown"
-        android:textSize="19sp" />
+        android:text="1. Warm-Up \n\t 2. Exercise of your own choice \n\t 3. Cooldown"
+        android:textSize="20sp" />
 
-    <LinearLayout
-        android:id="@+id/LinearLayout02"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" >
+        android:layout_margin="10dp"
+        android:text="A Warm-Up should consist of light activities which prepare your body for the stress of the workout. These activities increase blood flow and heat up muscles and joints."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <Button
-            android:id="@+id/cooldown"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="150px"
-            android:layout_marginTop="30px"
-            android:text="Cooldown" />
+    <Button
+        android:id="@+id/warmup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="Warm-Up" />
 
-        <Button
-            android:id="@+id/warmup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="240px"
-            android:layout_marginTop="30px"
-            android:text="Warm-Up" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Cool down activities are low-intensity which follow a stressful workout. They allow your heart rate to slow down and your body to return to its typical relaxed state"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <LinearLayout
-        android:id="@+id/LinearLayout02"
-        android:layout_width="491dp"
-        android:layout_height="200dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="100px" >
+    <Button
+        android:id="@+id/cooldown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="Cooldown" />
 
-        <TextView
-            android:id="@+id/editText3"
-            android:layout_width="250px"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5px"
-            android:inputType="textMultiLine"
-            android:text="light activities which prepare your body for the stress of the workout. These activities should increase blood flow, and heat up the muscles and joints"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/editText3"
-            android:layout_width="250px"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="150px"
-            android:layout_marginTop="5px"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            android:text="activities are low-intensity which follow a stressful workout. They allow your heart rate to slow down and your body to return to its typical relaxed state"
-            android:textSize="18sp" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Click here for a sample workout containing both a warm-up and cooldown"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
         android:id="@+id/samplework"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="270px"
-        android:layout_marginTop="30px"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
         android:text="Sample Workout" />
 
 </LinearLayout>

@@ -75,7 +75,7 @@ public class FindTrainer extends ListActivity {
 
 		//*** Ask server for trainer information and display in message
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-		alertDialogBuilder.setTitle("Match Maker");
+		alertDialogBuilder.setTitle("Find a Trainer");
 
 		alertDialogBuilder
 		.setMessage("TRAINER INFORMATION HERE")

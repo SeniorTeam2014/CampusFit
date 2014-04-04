@@ -4,43 +4,41 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <EditText
+    <TextView
         android:id="@+id/editText1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="\t\t\t\t   Common Warm-ups"
-        android:ems="10" >
-        
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:inputType="textMultiLine"
+        android:text="Common Warm-Ups"
+        android:textSize="30sp" />
 
-        <requestFocus />
-    </EditText>
+    <TextView
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:layout_margin="20dp"
+        android:text="GOAL: The goal of your warm-up is to prepare your muscles by increasing your body temperature. At the end, it is usually helpful to do some light stretching"
+        android:textSize="30sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GOAL: The goal of your warm-up is to prepare your muscles by increasing your body temperature. At the end, it is usually helpful to do some light stretching"
-        android:ems="10"
-        android:textSize="25sp"
-        android:inputType="textMultiLine" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:textSize="25sp"
-        android:gravity="center"
+        android:layout_margin="20dp"
+        android:inputType="textMultiLine"
         android:text="2-3 minutes of jump rope\n50 jumping jacks\n20 squats (without weight)\n5 lunges\n10 forward leg swings\n10 side leg swings\n10 arms swings\n10-20 pushups"
-        android:ems="10"
-        android:inputType="textMultiLine" />
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/stretches2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30px"
+        
         android:layout_marginLeft="270dp"
+        android:layout_marginTop="30px"
         android:text="Stretches" />
 
 </LinearLayout>
