@@ -46,6 +46,10 @@
         </activity>
         <activity android:name="com.example.campusfit.SampleWork" >
         </activity>
+        <activity android:name="com.example.campusfit.CreateGroup" >
+        </activity>
+        <activity android:name="com.example.campusfit.FindGroup" >
+        </activity>
         <activity android:name="com.example.campusfit.Stretches" >
         </activity>
         <activity android:name="com.example.campusfit.Stretches2" >
