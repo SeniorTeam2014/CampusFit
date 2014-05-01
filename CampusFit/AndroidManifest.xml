@@ -26,9 +26,13 @@
         </activity>
         <activity android:name="com.example.campusfit.SignUp" >
         </activity>
-        <activity android:name="com.example.campusfit.MainMenu" >
+        <activity android:name="com.example.campusfit.TrainerProfile" >
         </activity>
-        <activity android:name="com.example.campusfit.Profile" >
+        <activity android:name="com.example.campusfit.TrainerMainMenu" >
+        </activity>
+        <activity android:name="com.example.campusfit.UserMainMenu" >
+        </activity>
+        <activity android:name="com.example.campusfit.UserProfile" >
         </activity>
         <activity android:name="com.example.campusfit.Templates" >
         </activity>

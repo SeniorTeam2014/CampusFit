@@ -5,19 +5,25 @@ import java.util.ArrayList;
 import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class FindGroup extends ListActivity {
 
 	ArrayList<String> val = new ArrayList<String>();
 	ArrayAdapter<String> adapter;
+	String[] location = { "West Lafayette" };
+	String[] primary_goals = {"Strength Training", "Weight Loss", "Social Exercising"};
 
 	public void setActionBar(String heading) {
 		ActionBar actionBar = getActionBar();
@@ -51,40 +57,63 @@ public class FindGroup extends ListActivity {
 	}
 
 	private void showInstructions() {
+		
+	    final ArrayAdapter<String> adp = new ArrayAdapter<String>(this.getBaseContext(),
+	            android.R.layout.simple_spinner_item, location);
+	    final ArrayAdapter<String> adp2 = new ArrayAdapter<String>(this.getBaseContext(),
+	            android.R.layout.simple_spinner_item, primary_goals);
+		
+		AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+		dialog.setTitle("Search for a group:");
+		
+		LinearLayout layout = new LinearLayout(this.getBaseContext());
+		layout.setOrientation(LinearLayout.VERTICAL);
 
-		// AlertDialogue for templates instructions
-		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-		alertDialogBuilder.setTitle("Search");
-		alertDialogBuilder.setTitle("Find a group:");
-		final EditText input = new EditText(this); 
-		alertDialogBuilder.setView(input);
-		alertDialogBuilder.setPositiveButton("OK",new DialogInterface.OnClickListener() {
+		final EditText titleBox = new EditText(this.getBaseContext());
+		titleBox.setHint("Enter a group description");
+		layout.addView(titleBox);
+
+		final Spinner sp = new Spinner(this.getBaseContext());
+	    sp.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
+	    sp.setAdapter(adp);
+	    layout.addView(sp);
+	    
+		final Spinner sp2 = new Spinner(this.getBaseContext());
+	    sp2.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
+	    sp2.setAdapter(adp2);
+	    layout.addView(sp2);
+	    
+		dialog.setView(layout);
+		dialog.setPositiveButton("OK",new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog,int id) {
+				setActionBar("Find A Group -- Results");
 				// functionality for button press 
+				//*** send info to server here?
 			}
 		});
-		alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+		dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
 				return;   
 			}
 		});
-		alertDialogBuilder.show();
-
-
+		dialog.show();
 	}
 
 
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
+		
+		//*** request group info from server
 		String item = (String) getListAdapter().getItem(position);
 		Toast.makeText(this, item, Toast.LENGTH_LONG).show();
 
-		//*** Ask server for user information and display in message
+
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		alertDialogBuilder.setTitle("Find A Group");
 
+		//*** set the message to group info
 		alertDialogBuilder
 		.setMessage("Group INFORMATION HERE")
 		.setCancelable(false)

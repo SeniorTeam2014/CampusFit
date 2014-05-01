@@ -61,6 +61,7 @@ public class MatchmakerList extends ListActivity {
 		.setCancelable(false)
 		.setPositiveButton("OK",new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog,int id) {
+				setActionBar("Match Maker -- Results");
 				// functionality for button press 
 			}
 		});

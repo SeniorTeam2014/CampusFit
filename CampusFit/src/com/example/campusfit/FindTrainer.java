@@ -28,7 +28,7 @@ public class FindTrainer extends ListActivity {
 	
 	public void onCreate(Bundle i) {
 		
-		setActionBar("Find Trainer");
+		setActionBar("Find A Trainer");
 		showInstructions();
 		super.onCreate(i);
 		
@@ -60,6 +60,7 @@ public class FindTrainer extends ListActivity {
 		.setCancelable(false)
 		.setPositiveButton("OK",new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog,int id) {
+				setActionBar("Find A Trainer -- Results");
 				// functionality for button press 
 			}
 		});

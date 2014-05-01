@@ -8,67 +8,66 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class MainMenu extends Activity implements OnClickListener {
-
+public class UserMainMenu extends Activity implements OnClickListener{
 	public void setActionBar(String heading) {
 		ActionBar actionBar = getActionBar();
 		actionBar.setTitle(heading);
 		actionBar.show();
 	}
-
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		setActionBar("Main Menu");
+		setActionBar("User Main Menu");
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.menu);
-
+		setContentView(R.layout.usermenu);
+		
 		// setup 'profile' button
 		View profile = findViewById(R.id.profile);
 		profile.setOnClickListener(this);
-
+		
 		// setup 'templates' button
 		View templates = findViewById(R.id.templates);
 		templates.setOnClickListener(this);
-
+		
 		// setup 'workouts' button
 		View workouts = findViewById(R.id.workouts);
 		workouts.setOnClickListener(this);
-
+		
 		// setup 'matchmaker' button
 		View matchmaker = findViewById(R.id.matchmaker);
 		matchmaker.setOnClickListener(this);
-
+		
 		View findtrainer = findViewById(R.id.findatrainer);
 		findtrainer.setOnClickListener(this);
-
+		
 		// setup 'sampleworkouts' button
 		View sampleworkouts = findViewById(R.id.sampleworkouts);
 		sampleworkouts.setOnClickListener(this);
-
-		// setup 'creategroup' button
+		
+		// setup 'creatgroup' button
 		View creategroup = findViewById(R.id.creategroup);
 		creategroup.setOnClickListener(this);
-
-		// setup 'findgroup' button
+		
+		// setup 'find group' button
 		View findgroup = findViewById(R.id.findgroup);
 		findgroup.setOnClickListener(this);
-
+		
 	}
-
+	
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-
+		
 		case R.id.profile:
 			// profile button pressed
 			try {
-				Intent i1 = new Intent(this, Profile.class);
+				Intent i1 = new Intent(this, UserProfile.class);
 				startActivity(i1);
 			} catch (ActivityNotFoundException e) {
 				e.printStackTrace();
 			}
 			break;
-
+			
 		case R.id.templates:
 			// templates button pressed
 			try {
@@ -78,7 +77,7 @@ public class MainMenu extends Activity implements OnClickListener {
 				e.printStackTrace();
 			}
 			break;
-
+			
 		case R.id.workouts:
 			// workouts button pressed
 			try {
@@ -88,7 +87,7 @@ public class MainMenu extends Activity implements OnClickListener {
 				e.printStackTrace();
 			}
 			break;
-
+			
 		case R.id.matchmaker:
 			// matchmaker button pressed
 			try {
@@ -98,7 +97,7 @@ public class MainMenu extends Activity implements OnClickListener {
 				e.printStackTrace();
 			}
 			break;
-
+			
 		case R.id.findatrainer:
 			// matchmaker button pressed
 			try {
@@ -108,7 +107,7 @@ public class MainMenu extends Activity implements OnClickListener {
 				e.printStackTrace();
 			}
 			break;
-
+			
 		case R.id.sampleworkouts:
 			// sampleworkouts button pressed
 			try {
@@ -119,7 +118,7 @@ public class MainMenu extends Activity implements OnClickListener {
 			}
 			break;
 		case R.id.creategroup:
-
+			// creategroup button pressed
 			try {
 				Intent i7 = new Intent(this, CreateGroup.class);
 				startActivity(i7);
@@ -128,7 +127,7 @@ public class MainMenu extends Activity implements OnClickListener {
 			}
 			break;
 		case R.id.findgroup:
-
+			// findgroup button pressed
 			try {
 				Intent i8 = new Intent(this, FindGroup.class);
 				startActivity(i8);
@@ -136,9 +135,8 @@ public class MainMenu extends Activity implements OnClickListener {
 				e.printStackTrace();
 			}
 			break;
-
+		
 		}
-
+		
 	}
-
 }

@@ -12,7 +12,7 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class Profile extends Activity implements OnClickListener {
+public class UserProfile extends Activity implements OnClickListener {
 
 	public void setActionBar(String heading) {
 		ActionBar actionBar = getActionBar();
@@ -23,8 +23,8 @@ public class Profile extends Activity implements OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.profile);
-		setActionBar("Profile");
+		setContentView(R.layout.userprofile);
+		setActionBar("User Profile");
 		
 		View update = findViewById(R.id.update_info);
 		update.setOnClickListener(this);

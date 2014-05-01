@@ -95,8 +95,12 @@ public class MainActivity extends Activity implements OnClickListener {
 
 			if(checkuser.equals(username) && checkpass.equals(password))
 			{
+				//*** check if user or trainer
+				
 				try {
-					Intent i2 = new Intent(this, MainMenu.class);
+					//*** if user, Intent i2 = new Intent(this, UserMainMenu.class);
+					//*** if trainer, Intent i2 = new Intent(this, TrainerMainMenu.class);
+					Intent i2 = new Intent(this, TrainerMainMenu.class);
 					startActivity(i2);
 				} catch (ActivityNotFoundException e) {
 					e.printStackTrace();
