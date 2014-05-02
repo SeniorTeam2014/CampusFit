@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -34,7 +35,7 @@ public class FindTrainer extends ListActivity {
 		
 		adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, val);
-		setListAdapter(adapter);
+		//setListAdapter(adapter);
 		final ListView lv = getListView();
 		lv.setOnItemClickListener( new AdapterView.OnItemClickListener() { 
 			@Override 
@@ -43,7 +44,7 @@ public class FindTrainer extends ListActivity {
 				//return false; 
 			} 
 		} );
-		val.add("A trainer");
+		//val.add("A trainer");
 		
 		//*** Ask server for list of matches based on personal info.
 		//*** Populate arraylist with matches: val.add("USERNAME HERE");
@@ -62,6 +63,12 @@ public class FindTrainer extends ListActivity {
 			public void onClick(DialogInterface dialog,int id) {
 				setActionBar("Find A Trainer -- Results");
 				// functionality for button press 
+				RetrieveTrainer t = new RetrieveTrainer();
+				t.execute("http://54.245.123.104/findTrainer.php?tSpec=running");
+				SystemClock.sleep(300);
+				for(int i = 0 ; i < GlobalVariables.trainers.size(); i++)
+					val.add(GlobalVariables.trainers.get(i));
+				setListAdapter(adapter);
 			}
 		});
 		AlertDialog alertDialog = alertDialogBuilder.create();
@@ -77,9 +84,11 @@ public class FindTrainer extends ListActivity {
 		//*** Ask server for trainer information and display in message
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		alertDialogBuilder.setTitle("Find a Trainer");
-
+		RetrieveTrainerInfo t = new RetrieveTrainerInfo();
+		t.execute("http://54.245.123.104/profile.php?uName=" + item);
+		SystemClock.sleep(300);
 		alertDialogBuilder
-		.setMessage("TRAINER INFORMATION HERE")
+		.setMessage("Name: " + GlobalVariables.tname + "\nAge: " + GlobalVariables.tage + "\nPhone: " + GlobalVariables.tphone )
 		.setCancelable(false)
 		.setPositiveButton("OK",new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog,int id) {

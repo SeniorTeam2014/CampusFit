@@ -10,6 +10,7 @@ import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -54,7 +55,7 @@ public class Exercises extends ListActivity {
 		{
 			template="";
 		}
-
+		
 		setActionBar("Exercises for "+template);
 		super.onCreate(i);
 		//val.add("Run");
@@ -75,8 +76,8 @@ public class Exercises extends ListActivity {
 		RetrieveExercise j = new RetrieveExercise();
 		
 		try {
-			System.out.println("table: " + GlobalVariables.templates.get(0));
-			j.execute("http://54.245.123.104/exercise.php?tName=" +GlobalVariables.templates.get(0)).get();
+			GlobalVariables.exercises = new ArrayList<String>();
+			j.execute("http://54.245.123.104/exercise.php?tName=" +template).get();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -84,6 +85,7 @@ public class Exercises extends ListActivity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		SystemClock.sleep(300);
 		for(int k = 0; k < GlobalVariables.exercises.size(); k++)
 			val.add(GlobalVariables.exercises.get(k));
 	}

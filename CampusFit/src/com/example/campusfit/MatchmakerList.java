@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -36,7 +37,7 @@ public class MatchmakerList extends ListActivity {
 
 		adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, val);
-		setListAdapter(adapter);
+		
 		final ListView lv = getListView();
 		lv.setOnItemClickListener( new AdapterView.OnItemClickListener() { 
 			@Override 
@@ -45,7 +46,7 @@ public class MatchmakerList extends ListActivity {
 				//return false; 
 			} 
 		} );
-		val.add("A user");
+		//val.add("A user");
 
 		//*** Ask server for list of matches based on personal info.
 		//*** Populate arraylist with matches: val.add("USERNAME HERE");
@@ -74,6 +75,12 @@ public class MatchmakerList extends ListActivity {
 			public void onClick(DialogInterface dialog,int id) {
 				setActionBar("Match Maker -- Results");
 				//*** send query to server
+				RetrieveMatch m = new RetrieveMatch();
+				m.execute("http://54.245.123.104/match.php?Interest=running&uName="+GlobalVariables.username);
+				SystemClock.sleep(300);
+				for(int k = 0; k < GlobalVariables.matches.size(); k++)
+					val.add(GlobalVariables.matches.get(k));
+				setListAdapter(adapter);
 			}
 		});
 		AlertDialog alertDialog = alertDialogBuilder.create();
@@ -91,9 +98,11 @@ public class MatchmakerList extends ListActivity {
 		//*** Ask server for user information and display in message
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		alertDialogBuilder.setTitle("Match Maker");
-
+		RetrieveMatchInfo m = new RetrieveMatchInfo();
+		m.execute("http://54.245.123.104/profile.php?uName=" + item);
+		SystemClock.sleep(300);
 		alertDialogBuilder
-		.setMessage("USER INFORMATION HERE")
+		.setMessage("Name: " + GlobalVariables.mname + "\nAge: " + GlobalVariables.mage + "\nPhone: " + GlobalVariables.mphone)
 		.setCancelable(false)
 		.setPositiveButton("OK",new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog,int id) {

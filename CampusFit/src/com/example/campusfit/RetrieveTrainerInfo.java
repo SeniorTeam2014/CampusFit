@@ -14,17 +14,10 @@ import org.json.JSONObject;
 import android.os.AsyncTask;
 import android.util.Log;
 
-public class JSONFunctions extends AsyncTask<String,Void,String> {
+public class RetrieveTrainerInfo extends AsyncTask<String,Void,String> {
 	InputStream is = null;
 	String result = "";
-	String username = "test";
-	String password = "test";
-	String age = "test";
-	String location = "test";
-	String gender = "test";
-	String phone = "test";
-	String train = "test";
-	@Override
+		@Override
 	protected String doInBackground(String... params) {
 		try {
 
@@ -58,26 +51,15 @@ public class JSONFunctions extends AsyncTask<String,Void,String> {
 	        
 			JSONObject jObject = null;
 			jObject = new JSONObject(result);
-			username = (String)jObject.get("uName");
-			password = (String)jObject.get("uPass");
-			train = (String)jObject.getString("Trainer");
-			GlobalVariables.username = (String)jObject.get("uName");
-			GlobalVariables.password = (String)jObject.get("uPass");
-			GlobalVariables.phone = (String)jObject.get("Phone");
-			GlobalVariables.gender = (String)jObject.get("Gender");
-			GlobalVariables.age = (String)jObject.get("Age");
-			GlobalVariables.phone = (String)jObject.get("Phone");
-			GlobalVariables.location = (String)jObject.get("Location"); 
+			GlobalVariables.tname = (String)jObject.get("uName");
+			GlobalVariables.tage = (String)jObject.get("Age");
+			GlobalVariables.tphone = (String)jObject.get("Phone");
 			//Log.v("json user", getUsername());
 	}catch(JSONException e){
 	        Log.e("log_tag", "Error parsing data "+e.toString());
-	        GlobalVariables.username = "test1";
-	        password = "test1";
-	        GlobalVariables.age = "test1";
-	        GlobalVariables.username = "test1";
-	        GlobalVariables.gender = "test1";
-	        GlobalVariables.location = "test1";
-	        GlobalVariables.phone = "test1";
+	        GlobalVariables.tname = "TEST";
+	        GlobalVariables.tage = "TEST";
+	        GlobalVariables.tphone = "TEST";
 		}
 	
 		return null;
@@ -88,17 +70,4 @@ public class JSONFunctions extends AsyncTask<String,Void,String> {
 		//do nothing
 	}
 	
-	public String getUsername()
-	{
-		return username;
-	}
-	
-	public String getPassword()
-	{
-		return password;
-	}
-	public String getTrain()
-	{
-		return train;
-	}
 }

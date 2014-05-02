@@ -66,6 +66,15 @@ public class CreateGroup extends Activity implements OnClickListener {
 
 		//System.out.println("Groupname is : " + groupname );
 		
+		
+		grpname = grpname.replace(" ", "%20");
+		grpdescription = grpdescription.replace(" ", "%20");
+		grpowner = grpowner.replace(" ", "%20");
+		grpownerphone = grpownerphone.replace(" ", "%20");
+		grplocation = grplocation.replace(" ", "%20");
+		grpprimary_goal = grpprimary_goal.replace(" ", "%20");
+		j.execute("http://54.245.123.104/group.php?gName=" + grpname + "&gDes=" + grpdescription + "&gOwn="+ grpowner + "&gPhone=" + grpownerphone + "&gLoc="+ grplocation + "&gGoal=" + grpprimary_goal);
+		finish();
 	}
 
 }

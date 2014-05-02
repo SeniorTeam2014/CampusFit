@@ -8,6 +8,7 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -36,10 +37,9 @@ public class FindGroup extends ListActivity {
 		setActionBar("Find A Group");
 		showInstructions();
 		super.onCreate(i);
-
 		adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, val);
-		setListAdapter(adapter);
+		//setListAdapter(adapter);
 		final ListView lv = getListView();
 		lv.setOnItemClickListener( new AdapterView.OnItemClickListener() { 
 			@Override 
@@ -48,8 +48,6 @@ public class FindGroup extends ListActivity {
 				//return false; 
 			} 
 		} );
-		val.add("A Group");
-
 		//*** Ask server for list of matches based on personal info.
 		//*** Populate arraylist with matches: val.add("Group HERE");
 
@@ -84,11 +82,23 @@ public class FindGroup extends ListActivity {
 	    layout.addView(sp2);
 	    
 		dialog.setView(layout);
+		
+		String l = sp.getSelectedItem().toString().trim();
+		final String location = l.replace(" ", "%20");
+		String g = sp2.getSelectedItem().toString().trim();
+		final String goals = g.replace(" ", "%20");
+		final RetrieveGroup j = new RetrieveGroup();
 		dialog.setPositiveButton("OK",new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog,int id) {
 				setActionBar("Find A Group -- Results");
+				j.execute("http://54.245.123.104/findGroup.php?gGoal=" + goals + "&gLoc=" + location );
 				// functionality for button press 
 				//*** send info to server here?
+				SystemClock.sleep(300);
+				for(int k = 0; k < GlobalVariables.groups.size(); k++)
+					val.add(GlobalVariables.groups.get(k));
+				
+				setListAdapter(adapter);
 			}
 		});
 		dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -112,10 +122,13 @@ public class FindGroup extends ListActivity {
 
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		alertDialogBuilder.setTitle("Find A Group");
-
+		RetrieveGoupInfo j = new RetrieveGoupInfo();
+		String name = item.replace(" ", "%20");
+		j.execute("http://54.245.123.104/displayGroup.php?gName="+name);
 		//*** set the message to group info
+		SystemClock.sleep(300);
 		alertDialogBuilder
-		.setMessage("Group INFORMATION HERE")
+		.setMessage("Group Description: " + GlobalVariables.gdis + "\nGroup Owner: " + GlobalVariables.gown + "\nOwner Phone: " + GlobalVariables.gphone)
 		.setCancelable(false)
 		.setPositiveButton("OK",new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog,int id) {

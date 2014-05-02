@@ -3,11 +3,14 @@ package com.example.campusfit;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -51,11 +54,20 @@ public class RetrieveExercise extends AsyncTask<String,Void,String> {
 	        
 			JSONObject jObject = null;
 			jObject = new JSONObject(result);
-			String input = (String)jObject.get("eID") +" for "  +(String)jObject.get("reps");
-			if(GlobalVariables.exercises.contains(input))
+			JSONArray u = jObject.getJSONArray("eName");
+			GlobalVariables.exercises = new ArrayList<String>();
+			
+			//String input = (String)jObject.get("eName") +" for "  +(String)jObject.get("reps");
+			if(false)
 					System.out.println("cool");
 			else
-				GlobalVariables.exercises.add(input);
+			{
+				for(int i = 0; i < u.length(); i++)
+				{
+					String input = u.get(i).toString();
+					GlobalVariables.exercises.add(input);
+				}
+			}
 			
 	}catch(JSONException e){
 	        Log.e("log_tag", "Error parsing data "+e.toString());

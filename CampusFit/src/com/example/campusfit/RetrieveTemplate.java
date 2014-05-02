@@ -3,6 +3,8 @@ package com.example.campusfit;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -52,12 +54,8 @@ public class RetrieveTemplate extends AsyncTask<String,Void,String> {
 	          
 			JSONObject jObject = null;
 			jObject = new JSONObject(result);
-			//JSONArray u = jObject.getJSONArray("tName");
-			//System.out.println(u.get(0));
-			System.out.println("Check: " + GlobalVariables.templates.size());
-//			if(GlobalVariables.templates.contains((String)jObject.get("tName")))
-	//			System.out.println("cool");
 			
+			GlobalVariables.templates = new ArrayList<String>();
 			if(false)
 				System.out.println("WHAT");
 			else

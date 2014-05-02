@@ -79,12 +79,12 @@ public class SignUp extends Activity implements OnClickListener {
 		
 		
 		JSONFunctions j = new JSONFunctions();
-		location = "nigger land";
+		location = "happy land";
 		location = location.replace(" ", "%20");
 		//if(password.equals(passconfirm))
 		if(!password.isEmpty())
 		{
-		j.execute("http://54.245.123.104/signup.php?uName=" + username + "&uPass=" + password + "&uGend="+ gender + "&uAge=" + age + "&uPhone="+ phone + "&uLoc=" + location);
+		j.execute("http://54.245.123.104/signup.php?uName=" + username + "&uPass=" + password + "&uGend="+ gender + "&uAge=" + age + "&uPhone="+ phone + "&uLoc=" + location + "&uTrain=" + trainer + "&uAct=running");
 //		j.execute("http://54.245.123.104/register.php?uName=" + username + "&uPass=" + password).get();
 		}
 		

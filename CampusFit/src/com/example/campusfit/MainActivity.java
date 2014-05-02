@@ -2,6 +2,7 @@ package com.example.campusfit;
 
 import java.util.concurrent.ExecutionException;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
@@ -88,11 +89,12 @@ public class MainActivity extends Activity implements OnClickListener {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}	}
-
+			SystemClock.sleep(300);
 			String checkuser = j.getUsername();
 			String checkpass = j.getPassword();
+			
 			System.out.println(checkuser+", "+ checkpass);
-
+			
 			if(checkuser.equals(username) && checkpass.equals(password))
 			{
 				//*** check if user or trainer
@@ -100,8 +102,17 @@ public class MainActivity extends Activity implements OnClickListener {
 				try {
 					//*** if user, Intent i2 = new Intent(this, UserMainMenu.class);
 					//*** if trainer, Intent i2 = new Intent(this, TrainerMainMenu.class);
-					Intent i2 = new Intent(this, TrainerMainMenu.class);
-					startActivity(i2);
+					String train = j.getTrain();
+					if(train.equals("yes"))
+					{
+						Intent i2 = new Intent(this, TrainerMainMenu.class);
+						startActivity(i2);
+					}
+					else
+					{
+						Intent i2 = new Intent(this, UserMainMenu.class);
+						startActivity(i2);
+					}
 				} catch (ActivityNotFoundException e) {
 					e.printStackTrace();
 				}
