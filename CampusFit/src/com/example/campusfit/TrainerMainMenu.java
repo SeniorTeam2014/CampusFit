@@ -8,45 +8,48 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class TrainerMainMenu extends Activity implements OnClickListener{
+public class TrainerMainMenu extends Activity implements OnClickListener {
 	public void setActionBar(String heading) {
 		ActionBar actionBar = getActionBar();
 		actionBar.setTitle(heading);
 		actionBar.show();
 	}
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setActionBar("Trainer Main Menu");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.trainermenu);
-		
+
 		// setup 'profile' button
 		View profile = findViewById(R.id.profile);
 		profile.setOnClickListener(this);
-		
+
 		// setup 'templates' button
 		View templates = findViewById(R.id.templates);
 		templates.setOnClickListener(this);
-		
+
 		// setup 'workouts' button
 		View workouts = findViewById(R.id.workouts);
 		workouts.setOnClickListener(this);
-		
+
 		// setup 'creatgroup' button
 		View creategroup = findViewById(R.id.creategroup);
 		creategroup.setOnClickListener(this);
-		
+
 		// setup 'find group' button
 		View findgroup = findViewById(R.id.findgroup);
 		findgroup.setOnClickListener(this);
-		
+
+		View trainees = findViewById(R.id.trainees);
+		trainees.setOnClickListener(this);
+
 	}
-	
+
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		
+
 		case R.id.profile:
 			// profile button pressed
 			try {
@@ -56,7 +59,7 @@ public class TrainerMainMenu extends Activity implements OnClickListener{
 				e.printStackTrace();
 			}
 			break;
-			
+
 		case R.id.templates:
 			// templates button pressed
 			try {
@@ -66,7 +69,7 @@ public class TrainerMainMenu extends Activity implements OnClickListener{
 				e.printStackTrace();
 			}
 			break;
-			
+
 		case R.id.workouts:
 			// templates button pressed
 			try {
@@ -94,8 +97,18 @@ public class TrainerMainMenu extends Activity implements OnClickListener{
 				e.printStackTrace();
 			}
 			break;
-		
+
+		case R.id.trainees:
+			// trainees button pressed
+			try {
+				Intent i9 = new Intent(this, Trainees.class);
+				startActivity(i9);
+			} catch (ActivityNotFoundException e) {
+				e.printStackTrace();
+			}
+			break;
+
 		}
-		
+
 	}
 }

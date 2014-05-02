@@ -8,6 +8,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -51,16 +52,24 @@ public class RetrieveTemplate extends AsyncTask<String,Void,String> {
 	          
 			JSONObject jObject = null;
 			jObject = new JSONObject(result);
+			//JSONArray u = jObject.getJSONArray("tName");
+			//System.out.println(u.get(0));
 			System.out.println("Check: " + GlobalVariables.templates.size());
-			if(GlobalVariables.templates.contains((String)jObject.get("tName")))
-				System.out.println("cool");
-			else
-				GlobalVariables.templates.add((String)jObject.get("tName"));
-			//GlobalVariables.templates.add((String)jObject.get("tName"));
-			//GlobalVariables.templates.add((String)jObject.get("tName"));
+//			if(GlobalVariables.templates.contains((String)jObject.get("tName")))
+	//			System.out.println("cool");
 			
-			//for(int i = 0; i < GlobalVariables.templates.size(); i++)
-				//System.out.println(GlobalVariables.templates.get(i));
+			if(false)
+				System.out.println("WHAT");
+			else
+				{
+					//GlobalVariables.templates.add((String)jObject.get("tName"));
+					JSONArray u = jObject.getJSONArray("tName");
+					for(int i = 0; i < u.length(); i++)
+						GlobalVariables.templates.add(u.get(i).toString());
+					//GlobalVariables.templates.add("WHA");
+					//GlobalVariables.templates.add(u.get(0).toString());
+					//System.out.println("LENGTH OF U: " + u.length());
+				}
 			
 	}catch(JSONException e){
 	        Log.e("log_tag", "Error parsing data "+e.toString());

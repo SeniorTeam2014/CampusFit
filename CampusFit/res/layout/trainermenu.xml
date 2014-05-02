@@ -98,4 +98,23 @@
         android:layout_toLeftOf="@+id/workouts"
         android:background="@drawable/picture4" />
 
+    <ImageButton
+        android:id="@+id/trainees"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/TextView07"
+        android:layout_alignTop="@+id/templates"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/trainees" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/findgroup"
+        android:layout_marginBottom="149dp"
+        android:text="My Trainees"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
 </RelativeLayout>

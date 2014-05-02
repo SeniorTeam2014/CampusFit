@@ -45,7 +45,8 @@ public final class R {
         public static final int quads=0x7f020011;
         public static final int shoulder=0x7f020012;
         public static final int signup=0x7f020013;
-        public static final int user=0x7f020014;
+        public static final int trainees=0x7f020014;
+        public static final int user=0x7f020015;
     }
     public static final class id {
         public static final int LinearLayout01=0x7f090032;
@@ -57,11 +58,11 @@ public final class R {
         public static final int TextView05=0x7f09001e;
         public static final int TextView06=0x7f090022;
         public static final int TextView07=0x7f090020;
-        public static final int action_settings=0x7f090038;
+        public static final int action_settings=0x7f090039;
         public static final int age=0x7f090026;
-        public static final int calendarView1=0x7f090036;
+        public static final int calendarView1=0x7f090037;
         public static final int cooldown=0x7f09002f;
-        public static final int create=0x7f090037;
+        public static final int create=0x7f090038;
         public static final int create_account=0x7f090031;
         public static final int creategroup=0x7f09001f;
         public static final int editText1=0x7f090000;
@@ -89,7 +90,7 @@ public final class R {
         public static final int samplework=0x7f090030;
         public static final int sampleworkouts=0x7f090017;
         public static final int signup=0x7f090006;
-        public static final int stretches2=0x7f090035;
+        public static final int stretches2=0x7f090036;
         public static final int templates=0x7f09001b;
         public static final int textView1=0x7f09000b;
         public static final int textView2=0x7f09000d;
@@ -99,6 +100,7 @@ public final class R {
         public static final int textView6=0x7f090011;
         public static final int textView7=0x7f09002b;
         public static final int textView8=0x7f090009;
+        public static final int trainees=0x7f090035;
         public static final int trainer_no=0x7f09002d;
         public static final int trainer_yes=0x7f09002c;
         public static final int update_info=0x7f090013;

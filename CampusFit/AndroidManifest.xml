@@ -26,6 +26,8 @@
         </activity>
         <activity android:name="com.example.campusfit.SignUp" >
         </activity>
+        <activity android:name="com.example.campusfit.Trainees" >
+        </activity>
         <activity android:name="com.example.campusfit.TrainerProfile" >
         </activity>
         <activity android:name="com.example.campusfit.TrainerMainMenu" >

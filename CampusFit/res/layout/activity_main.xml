@@ -42,15 +42,6 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/user" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="840dp"
-        android:layout_height="400dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp"
-        android:src="@drawable/campusfit" />
-
     <ImageButton
         android:id="@+id/enter"
         android:layout_width="250dp"
@@ -68,5 +59,13 @@
         android:layout_marginTop="36dp"
         android:layout_toLeftOf="@+id/enter"
         android:background="@drawable/signup" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/campusfit" />
 
 </RelativeLayout>

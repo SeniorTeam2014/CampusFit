@@ -59,7 +59,10 @@ public class Templates extends ListActivity {
 		//*** Ask server for user's templates
 		// add template to list: 'val.add("template name here");'
 		RetrieveTemplate j = new RetrieveTemplate();
-		
+		for(int k = 0 ; k < GlobalVariables.templates.size(); k++)
+		{
+			GlobalVariables.templates.remove(0);
+		}
 		try {
 			System.out.println(GlobalVariables.username);
 			j.execute("http://54.245.123.104/templateTemp.php?uName=" + GlobalVariables.username).get();
