@@ -58,11 +58,10 @@ public final class R {
         public static final int TextView05=0x7f09001e;
         public static final int TextView06=0x7f090022;
         public static final int TextView07=0x7f090020;
-        public static final int action_settings=0x7f090039;
+        public static final int action_settings=0x7f09003b;
         public static final int age=0x7f090026;
-        public static final int calendarView1=0x7f090037;
         public static final int cooldown=0x7f09002f;
-        public static final int create=0x7f090038;
+        public static final int create=0x7f09003a;
         public static final int create_account=0x7f090031;
         public static final int creategroup=0x7f09001f;
         public static final int editText1=0x7f090000;
@@ -79,6 +78,9 @@ public final class R {
         public static final int imageView1=0x7f090004;
         public static final int imageView2=0x7f090001;
         public static final int imageView3=0x7f090002;
+        public static final int interest1=0x7f090036;
+        public static final int interest2=0x7f090037;
+        public static final int interest3=0x7f090038;
         public static final int list=0x7f090014;
         public static final int location_spinner=0x7f090010;
         public static final int male_radio=0x7f090029;
@@ -90,7 +92,7 @@ public final class R {
         public static final int samplework=0x7f090030;
         public static final int sampleworkouts=0x7f090017;
         public static final int signup=0x7f090006;
-        public static final int stretches2=0x7f090036;
+        public static final int stretches2=0x7f090039;
         public static final int templates=0x7f09001b;
         public static final int textView1=0x7f09000b;
         public static final int textView2=0x7f09000d;

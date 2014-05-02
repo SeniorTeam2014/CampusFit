@@ -40,7 +40,9 @@ public class UserProfile extends Activity implements OnClickListener {
 		RadioButton male = (RadioButton)findViewById(R.id.male_radio);
 		RadioButton female = (RadioButton)findViewById(R.id.female_radio);
 		Spinner loc = (Spinner)findViewById(R.id.location_spinner);
-		Spinner goal = (Spinner)findViewById(R.id.goal_spinner);
+		EditText interest1 = (EditText)findViewById(R.id.interest1);
+		EditText interest2 = (EditText)findViewById(R.id.interest2);
+		EditText interest3 = (EditText)findViewById(R.id.interest3);
 		RadioButton traineryes = (RadioButton)findViewById(R.id.trainer_yes);
 		RadioButton trainerno = (RadioButton)findViewById(R.id.trainer_no);
 		

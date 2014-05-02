@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,13 +58,22 @@ public class MatchmakerList extends ListActivity {
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		alertDialogBuilder.setTitle("Match Maker");
 
+		LinearLayout layout = new LinearLayout(this.getBaseContext());
+		layout.setOrientation(LinearLayout.VERTICAL);
+
+		final EditText interestbox = new EditText(this.getBaseContext());
+		interestbox.setHint("Enter your interests");
+		layout.addView(interestbox);
+		
+		alertDialogBuilder.setView(layout);
+		
 		alertDialogBuilder
-		.setMessage("The match maker will automatically suggest other users based on your profile. Press on a username to see information.")
+		.setMessage("The match maker will suggest other users based on your profile and interests. Press on a username to see information.")
 		.setCancelable(false)
 		.setPositiveButton("OK",new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog,int id) {
 				setActionBar("Match Maker -- Results");
-				// functionality for button press 
+				//*** send query to server
 			}
 		});
 		AlertDialog alertDialog = alertDialogBuilder.create();
